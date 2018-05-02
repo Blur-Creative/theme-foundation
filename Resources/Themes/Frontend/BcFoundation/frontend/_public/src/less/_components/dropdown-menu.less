@@ -1,3 +1,42 @@
+.dropdown--appearance {
+	top: 100%;
+	margin-top: 0.5rem;
+	z-index: 100;
+	width: 100%;
+	max-width: 18rem;
+	min-width: 12rem;
+	background-color: @dropdown-menu-bg;
+	box-shadow: 0.2rem 0.2rem 1.5rem 0 rgba(0, 0, 0, 0.2);
+	border: 0 solid @border-color;
+	.unitize(border-width, 1);
+	.unitize(border-radius, @border-radius-base);
+	
+	&:after,
+	&:before {
+		bottom: 100%;
+		left: 2rem;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;		
+	}
+	
+	&:after {
+		border-color: transparent;
+		border-bottom-color: @dropdown-menu-bg;
+		.unitize(border-width, @dropdown-menu-arrow-size);
+		.unitize(margin-left, -@dropdown-menu-arrow-size);
+	}
+	&:before {
+		border-color: transparent;
+		border-bottom-color: @border-color;
+		.unitize(border-width, (@dropdown-menu-arrow-size + 2));
+		.unitize(margin-left, -(@dropdown-menu-arrow-size + 2));
+	}	
+}
+
 .dropdown--menu-item-padding {
 	.unitize-padding(5, 20);
 }
@@ -65,47 +104,13 @@
 
 .dropdown--menu {
 	&:extend(.position-absolute);
-	top: 100%;
-	margin-top: 0.5rem;
+	&:extend(.dropdown--appearance all);
 	left: 0;
 	visibility: hidden;
 	opacity: 0;
 	transition: unset;
-	z-index: 100;
-	width: 100%;
-	max-width: 18rem;
-	min-width: 12rem;
-	background-color: @dropdown-menu-bg;
-	box-shadow: 0.2rem 0.2rem 1.5rem 0 rgba(0, 0, 0, 0.2);
 	
-	border: 0 solid @border-color;
-	.unitize(border-width, 1);
-	.unitize(border-radius, @border-radius-base);
-	
-	&:after,
-	&:before {
-		bottom: 100%;
-		left: 2rem;
-		border: solid transparent;
-		content: " ";
-		height: 0;
-		width: 0;
-		position: absolute;
-		pointer-events: none;		
-	}
-	
-	&:after {
-		border-color: transparent;
-		border-bottom-color: @dropdown-menu-bg;
-		.unitize(border-width, @dropdown-menu-arrow-size);
-		.unitize(margin-left, -@dropdown-menu-arrow-size);
-	}
-	&:before {
-		border-color: transparent;
-		border-bottom-color: @border-color;
-		.unitize(border-width, (@dropdown-menu-arrow-size + 2));
-		.unitize(margin-left, -(@dropdown-menu-arrow-size + 2));
-	}
+
 	
 	.dropdown--menu-list {
 		&:extend(.list--unstyled);
