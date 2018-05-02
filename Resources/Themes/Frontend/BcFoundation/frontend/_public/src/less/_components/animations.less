@@ -1,0 +1,13 @@
+.collapse-fade {
+	transition: all .5s;
+	visibility: visible;
+	opacity: 1;
+	
+	&.is--hidden {
+		&:extend(.display-block);
+		opacity: 0;
+		visibility: hidden;
+		height: 0;
+		transition: unset;		
+	}
+}

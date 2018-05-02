@@ -1,0 +1,89 @@
+.btn {
+	&:extend(.display-inline-flex);
+	&:extend(.align-items-center);
+	&:extend(.btn--size-base);
+	&:extend(.btn--active-states all);
+	&:extend(.btn--default all);
+	&:extend(.btn--icon-node all);
+	&:extend(.user-select-none);
+	.unitize(border-width, 1);
+	border-style: solid;
+	font-weight: 600;
+	transition: all .3s;
+	height: auto;
+	cursor: pointer;
+	
+	&:hover {
+		text-decoration: none;
+	}
+	
+	&:focus,
+	&.focus {
+		outline: 0;
+	}
+	
+	&.is--primary {
+		&:extend(.btn--primary all);
+	}
+	&.is--secondary {
+		&:extend(.btn--secondary all);
+	}
+	&.is--success {
+		&:extend(.btn--success all);
+	}
+	&.is--info {
+		&:extend(.btn--info all);
+	}
+	&.is--warning {
+		&:extend(.btn--warning all);
+	}
+	&.is--danger {
+		&:extend(.btn--danger all);
+	}
+	&.is--light {
+		&:extend(.btn--light all);
+	}
+	&.is--dark {
+		&:extend(.btn--dark all);
+	}
+	&.is--link {
+		&:extend(.btn--link all);
+	}
+	
+	&.is--primary-outline {
+		&:extend(.btn--primary-outline all);
+	}
+	&.is--secondary-outline {
+		&:extend(.btn--secondary-outline all);
+	}
+	&.is--success-outline {
+		&:extend(.btn--success-outline all);
+	}
+	&.is--info-outline {
+		&:extend(.btn--info-outline all);
+	}
+	&.is--warning-outline {
+		&:extend(.btn--warning-outline all);
+	}
+	&.is--danger-outline {
+		&:extend(.btn--danger-outline all);
+	}
+	&.is--light-outline {
+		&:extend(.btn--light-outline all);
+	}
+	&.is--dark-outline {
+		&:extend(.btn--dark-outline all);
+	}
+	
+	&.is--small {
+		&:extend(.btn--size-sm);
+	}
+	&.is--large {
+		&:extend(.btn--size-lg);
+	}
+	
+	&.is--block {
+		&:extend(.justify-content-center);
+		width: 100%;
+	}
+}

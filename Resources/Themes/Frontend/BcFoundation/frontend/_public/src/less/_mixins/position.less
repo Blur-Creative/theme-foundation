@@ -1,0 +1,30 @@
+.position-absolute {
+	position: absolute;
+}
+.position-relative {
+	position: relative;
+}
+
+.position-reset {
+	position: static;
+	left: auto;
+	right: auto;
+	top: auto;
+	bottom: auto;
+}
+
+.position-relative-reset {
+	position: relative;
+	left: auto;
+	right: auto;
+	top: auto;
+	bottom: auto;
+}
+
+.position-absolute-reset {
+	&:extend(.position-absolute);
+	left: auto;
+	right: auto;
+	top: auto;
+	bottom: auto;
+}

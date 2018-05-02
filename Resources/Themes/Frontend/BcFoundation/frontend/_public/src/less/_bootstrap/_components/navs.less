@@ -1,0 +1,31 @@
+// Basic
+.nav {
+	&:extend(.nav all);
+}
+.nav-item {
+	&:extend(.nav-item all);
+}
+.nav-link {
+	&:extend(.nav-link all);
+	
+	&.active,
+	&:active,
+	&:focus {
+		&:extend(a:active);
+	}
+}
+
+// Nav Pills
+.nav-pills {
+	&:extend(.nav-pills all);
+}
+
+// Nav Fill
+.nav-fill {
+	&:extend(.nav-fill all);
+}
+
+// Nav Justified
+.nav-justified {
+	&:extend(.nav-justified all);
+}

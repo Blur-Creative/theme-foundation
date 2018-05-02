@@ -1,0 +1,159 @@
+/*
+ * Shades for the screen and multipy function
+ */
+@shade-100: #ffffff;
+@shade-200: #eeeeee;
+@shade-300: #cccccc;
+@shade-400: #aaaaaa;
+@shade-500: #888888;
+@shade-600: #666666;
+@shade-700: #444444;
+@shade-800: #222222;
+@shade-900: #000000;
+
+/*
+ * Base Colors
+ */
+@brand-secondary-light:					screen(@brand-secondary, @shade-800);
+
+@brand-success:							@highlight-success;
+@brand-success-light:					screen(@brand-success, @shade-800);
+
+@brand-info:							@highlight-info;
+@brand-info-light:						screen(@brand-info, @shade-800);
+
+@brand-warning:							@highlight-notice;
+@brand-warning-light:					screen(@brand-warning, @shade-800);
+
+@brand-danger:							@highlight-error;
+@brand-danger-light:					screen(@brand-danger, @shade-800);
+
+@brand-light:							screen(@gray, @shade-400);
+@brand-light-light:						screen(@brand-light, @shade-400);
+
+@brand-dark:							multiply(@gray, @shade-700);
+@brand-dark-light:						screen(@brand-dark, @shade-800);
+
+@color-muted:							#aaaaaa;
+@color-white:							#ffffff;
+
+/*
+ * Text Colors
+ */
+@text-primary:                          @brand-primary;
+@text-primary-dark:                     multiply(@brand-primary, @shade-400);
+
+@text-secondary:                        @brand-secondary;
+@text-secondary-dark:                   multiply(@brand-secondary, @shade-400);
+
+@text-success:                          @brand-success;
+@text-success-dark:                     multiply(@brand-success, @shade-400);
+
+@text-danger:                        	@brand-danger;
+@text-danger-dark:                    	multiply(@brand-danger, @shade-400);
+
+@text-warning:                          @brand-warning;
+@text-warning-dark:                     multiply(@brand-warning, @shade-400);
+
+@text-info:                         	@brand-info;
+@text-info-dark:                    	multiply(@brand-info, @shade-400);
+
+@text-light:                        	@brand-light;
+@text-light-dark:                  		multiply(@brand-light, @shade-400);
+
+@text-dark:                        		@brand-dark;
+@text-dark-dark:                     	multiply(@brand-dark, @shade-400);
+
+@text-muted:                          	@color-muted;
+@text-muted-dark:                     	multiply(@color-muted, @shade-400);
+
+@text-white:	                      	@color-white;
+@text-white-dark:                     	multiply(@color-white, @shade-400);
+
+/*
+ * Background Colors
+ */
+@bg-primary:							@brand-primary;
+@bg-primary-dark:						multipy(@brand-primary, @shade-300);
+
+@bg-secondary:							@brand-secondary;
+@bg-secondary-dark:						multipy(@brand-secondary, @shade-300);
+
+@bg-success:							@brand-success;
+@bg-success-dark:						multipy(@brand-success, @shade-300);
+
+@bg-danger:								@brand-danger;
+@bg-danger-dark:						multipy(@brand-danger, @shade-300);
+
+@bg-warning:							@brand-warning;
+@bg-warning-dark:						multipy(@brand-warning, @shade-300);
+
+@bg-info:								@brand-info;
+@bg-info-dark:							multipy(@brand-info, @shade-300);
+
+@bg-light:								@brand-light;
+@bg-light-dark:							multipy(@brand-light, @shade-300);
+
+@bg-dark:								@brand-dark;
+@bg-dark-dark:							multipy(@brand-dark, @shade-300);
+
+@bg-white:								@color-white;
+@bg-white-dark:							multipy(@color-white, @shade-300);
+
+/*
+ * Border Colors
+ */
+@border-primary:						@brand-primary;
+@border-secondary:						@brand-secondary;
+@border-success:						@brand-success;
+@border-danger:							@brand-danger;
+@border-warning:						@brand-warning;
+@border-info:							@brand-info;
+@border-light:							@brand-light;
+@border-dark:							@brand-dark;
+@border-white:							@color-white;
+
+/*
+ * Button Colors
+ */
+@btn-success-top-bg:					@btn-default-top-bg;
+@btn-success-bottom-bg:					@btn-default-bottom-bg;
+@btn-success-text-color:				@btn-primary-text-color;
+@btn-success-hover-bg:					@brand-success-light;
+@btn-success-hover-text-color:			@btn-success-text-color;
+
+@btn-info-top-bg:						@btn-default-top-bg;
+@btn-info-bottom-bg:					@btn-default-bottom-bg;
+@btn-info-text-color:					@btn-primary-text-color;
+@btn-info-hover-bg:						@brand-info-light;
+@btn-info-hover-text-color:				@btn-info-text-color;
+
+@btn-warning-top-bg:					@btn-default-top-bg;
+@btn-warning-bottom-bg:					@btn-default-bottom-bg;
+@btn-warning-text-color:				@brand-dark;
+@btn-warning-hover-bg:					@brand-warning-light;
+@btn-warning-hover-text-color:			@btn-warning-text-color;
+
+@btn-danger-top-bg:						@btn-default-top-bg;
+@btn-danger-bottom-bg:					@btn-default-bottom-bg;
+@btn-danger-text-color:					@btn-primary-text-color;
+@btn-danger-hover-bg:					@brand-danger-light;
+@btn-danger-hover-text-color:			@btn-danger-text-color;
+
+@btn-light-top-bg:						@btn-default-top-bg;
+@btn-light-bottom-bg:					@btn-default-bottom-bg;
+@btn-light-text-color:					@brand-dark;
+@btn-light-hover-bg:					@brand-light-light;
+@btn-light-hover-text-color:			@btn-light-text-color;
+
+@btn-dark-top-bg:						@btn-default-top-bg;
+@btn-dark-bottom-bg:					@btn-default-bottom-bg;
+@btn-dark-text-color:					@btn-primary-text-color;
+@btn-dark-hover-bg:						@brand-dark-light;
+@btn-dark-hover-text-color:				@btn-dark-text-color;
+
+/*
+ * Dropdown Colors
+ */
+@dropdown-menu-bg:						#ffffff;
+@dropdown-menu-arrow-size:				8;

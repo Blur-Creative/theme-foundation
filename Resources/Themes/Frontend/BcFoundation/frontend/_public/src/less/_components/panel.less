@@ -1,0 +1,124 @@
+.panel--title-padding {
+	.unitize-padding(15, 20);
+	line-height: @line-height-base;
+}
+
+.panel--body-padding {
+	.unitize-padding(20, 20);
+	line-height: @line-height-base;
+}
+
+.panel--footer-padding {
+	.unitize-padding(15, 20);
+	line-height: @line-height-base;
+}
+
+.panel--title {
+	&:extend(.panel--title-padding);
+	.unitize(font-size, 20);
+	font-weight: 600;
+	margin: 0;
+	border: 0 solid @border-color;
+	
+	&.is--underline {
+		.unitize(border-bottom-width, 1);
+	}
+	&.is--overline {
+		.unitize(border-top-width, 1);
+	}
+}
+
+.panel--footer {
+	&:extend(.panel--footer-padding);
+	margin: 0;
+	border: 0 solid @border-color;
+	.unitize(border-top-width, 1);
+	background-color: rgba(0,0,0,.03);
+}
+
+.panel--body {
+	&:extend(.panel--body-padding);
+}
+
+.panel {
+	
+	&.has--border {
+		.unitize(border-width, 1);
+		.unitize(border-radius, @border-radius-base);
+		border-style: solid;
+		border-color: @border-color;
+	}
+	
+	&.panel--primary {
+		background-color: @brand-primary;
+		border-color: @brand-primary;
+		
+		> .panel--title {
+			background-color: rgba(0,0,0,.03);
+			background-image: none;
+			border-color: rgba(0,0,0,.125);
+			color: @brand-light;
+		}
+	}
+	&.panel--secondary {
+		background-color: @brand-secondary;
+		border-color: @brand-secondary;
+		
+		> .panel--title {
+			&:extend(.panel.panel--primary > .panel--title);
+		}
+	}
+	&.panel--success {
+		background-color: @brand-success;
+		border-color: @brand-success;
+		
+		> .panel--title {
+			&:extend(.panel.panel--primary > .panel--title);
+		}
+	}
+	&.panel--info {
+		background-color: @brand-info;
+		border-color: @brand-info;
+		
+		> .panel--title {
+			&:extend(.panel.panel--primary > .panel--title);
+		}
+	}
+	&.panel--danger {
+		background-color: @brand-danger;
+		border-color: @brand-danger;
+		
+		> .panel--title {
+			&:extend(.panel.panel--primary > .panel--title);
+		}
+	}
+	&.panel--warning {
+		background-color: @brand-warning;
+		border-color: @brand-warning;
+		color: @text-dark;
+		
+		> .panel--title {
+			&:extend(.panel.panel--primary > .panel--title);
+			color: @text-dark;
+		}
+	}
+	&.panel--light {
+		background-color: @brand-light;
+		border-color: @brand-light;
+		color: @text-dark;
+		
+		> .panel--title {
+			&:extend(.panel.panel--primary > .panel--title);
+			color: @text-dark;
+		}
+	}
+	&.panel--dark {
+		background-color: @brand-dark;
+		border-color: @brand-dark;
+		color: @text-light;
+		
+		> .panel--title {
+			&:extend(.panel.panel--primary > .panel--title);
+		}
+	}
+}

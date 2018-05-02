@@ -1,0 +1,53 @@
+.color-swatch {
+	width: 120px;
+	height: 120px;
+	display: inline-block;
+	
+	&.gray {
+		background-color: @gray;
+	}
+	
+	&.brand-light {
+		background-color: @brand-light;
+	}
+	
+	&.brand-dark {
+		background-color: @brand-dark;
+	}
+}
+
+// Variables
+@import "_variables/breakpoints.less";
+@import "_variables/colors.less";
+@import "_variables/scaffolding.less";
+@import "_variables/typography.less";
+
+// Bootstrap
+@import "bootstrap.less";
+
+// Icons
+@import "_icons/variables.less";
+@import "_icons/style.less";
+
+// Mixins
+@import "_mixins/bg-gardient.less";
+@import "_mixins/buttons.less";
+@import "_mixins/display.less";
+@import "_mixins/flex.less";
+@import "_mixins/forms.less";
+@import "_mixins/position.less";
+@import "_mixins/typography.less";
+@import "_mixins/user-select.less";
+
+// Components
+@import "_components/animations.less";
+@import "_components/buttons.less";
+@import "_components/dropdown-menu.less";
+@import "_components/forms.less";
+@import "_components/grid.less";
+@import "_components/language.less";
+@import "_components/offcanvas-menu.less";
+@import "_components/overlay.less";
+@import "_components/panel.less";
+@import "_components/range-slider.less";
+@import "_components/visibility.less";

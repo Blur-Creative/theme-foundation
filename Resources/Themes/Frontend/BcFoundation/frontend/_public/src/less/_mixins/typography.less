@@ -1,0 +1,78 @@
+/*
+ * Font Family Stacks
+ */
+.font-stack-base {
+	font-family: @font-base-stack;
+}
+.font-stack-headline {
+	font-family: @font-headline-stack;
+}
+
+/*
+ * Text Alignment
+ */
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+
+/*
+ * Lists
+ */
+.list--unstyled {
+	list-style: none;
+	padding: 0;
+}
+
+.list--inline {
+	&:extend(.list--unstyled);
+
+	> li {
+		&:extend(.display-inline-block);
+	}
+}
+
+.list--unordered, .list--icon {
+	&:extend(.list--unstyled);
+	
+	// Default styling for unordered lists
+	> li {
+		&:extend(.display-flex);
+		&:extend(.align-items-center);
+		&:extend(.font-stack-base);
+		line-height: @line-height-base;
+		
+		&:before {
+			&:extend([class^="icon--"], [class*=" icon--"]);
+			.unitize(padding-right, 15);
+		}
+	}
+	
+	// Other list icons
+	&.is--disc > li {
+		&:extend(.icon--record all);
+	}
+	&.is--checked > li {
+		&:extend(.icon--check all);
+	}
+	&.is--arrow-right > li {
+		&:extend(.icon--arrow-right all);
+	}
+	&.is--star > li {
+		&:extend(.icon--star all);
+	}
+	&.is--cross > li {
+		&:extend(.icon--cross all);
+	}
+	&.is--tag > li {
+		&:extend(.icon--tag all);
+	}
+	&.is--plus > li {
+		&:extend(.icon--plus all);
+	}
+}

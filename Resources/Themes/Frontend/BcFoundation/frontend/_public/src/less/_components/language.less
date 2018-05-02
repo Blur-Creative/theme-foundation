@@ -1,0 +1,17 @@
+.language--flag {
+	&:extend(.display-inline-block);
+	width: 1.25rem;
+	height: 0.9375rem;
+	margin-right: 0.9375rem;
+	background-size: 1.25rem 0.9375rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	.unitize(border-radius, @border-radius-base);
+	
+	&.en_GB {
+		background-image: url('../../svg/flags/gb.svg');
+	}
+	&.de_DE {
+		background-image: url('../../svg/flags/de.svg');
+	}
+}
