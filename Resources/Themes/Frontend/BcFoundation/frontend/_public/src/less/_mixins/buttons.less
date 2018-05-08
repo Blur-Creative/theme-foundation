@@ -41,12 +41,14 @@
 
 .btn--icon-node {
 	
+	* ~ i {
+		.unitize(margin-left, 10);
+	}
+	
 	i {
-		.unitize(margin-right, 10);
-		
-		&:last-child {
+	
+		+ * {
 			.unitize(margin-left, 10);
-			margin-right: 0;
 		}
 	}
 }
