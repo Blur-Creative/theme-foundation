@@ -26,17 +26,35 @@
 	&:extend(.form-check-label);
 }
 
-/*
+
 .custom-control {
 	&:extend(.custom-control all);
+	.unitize(padding-top, 3);
+	.unitize(padding-bottom, 3);
+	    min-height: unset;
 }
 .custom-control-input {
 	&:extend(.custom-control-input all);
 }
 .custom-control-label {
 	&:extend(.custom-control-label all);
+	cursor: pointer;
 }
 .custom-checkbox {
 	&:extend(.custom-checkbox all);
 }
-*/
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, .custom-checkbox .custom-control-input:checked ~ .filter-panel--option-list .option--container .filter-panel--label::before, .custom-checkbox .custom-control-input:checked ~ .filter-panel--option-list .option--container .filter-panel--label::before,
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before, .custom-radio .custom-control-input:checked ~ .custom-control-label::before, .custom-radio .custom-control-input:checked ~ .filter-panel--option-list .option--container .filter-panel--label::before, .custom-radio .custom-control-input:checked ~ .filter-panel--option-list .option--container .filter-panel--label::before {
+	background-color: @brand-secondary;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before, .custom-control-input:focus ~ .custom-control-label::before, .custom-control-input:focus ~ .filter-panel--option-list .option--container .filter-panel--label::before, .custom-control-input:focus ~ .filter-panel--option-list .option--container .filter-panel--label::before {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem fade(@brand-secondary, 25%);
+}
+
+.custom-control-label::before,
+.custom-control-label::after {
+    top: 50%;
+    margin-top: -0.5rem;	
+}

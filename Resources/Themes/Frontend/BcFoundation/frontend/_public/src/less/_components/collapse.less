@@ -1,0 +1,39 @@
+.collapse--button {
+	&:extend(.display-flex);
+	&:extend(.align-items-center);
+	cursor: pointer;
+	
+	&:after {
+		margin-left: auto;
+	}
+	
+	&:after {
+		&:extend([class^="icon--"], [class*=" icon--"]);
+		
+		content: @icon--plus3; 
+	}
+	
+	&.is--active {
+		&:after {
+			content: @icon--minus3; 
+		}		
+	}
+}
+
+.collapse--content {
+	&:extend(.display-none);
+}
+
+
+.collapse--reset-md {
+	
+	.collapse--button {
+		&:after {
+			&:extend(.display-none-md);
+		}
+	}
+	
+	.collapse--content {
+		&:extend(.display-block-md);
+	}
+}

@@ -1,26 +1,12 @@
-.color-swatch {
-	width: 120px;
-	height: 120px;
-	display: inline-block;
-	
-	&.gray {
-		background-color: @gray;
-	}
-	
-	&.brand-light {
-		background-color: @brand-light;
-	}
-	
-	&.brand-dark {
-		background-color: @brand-dark;
-	}
-}
-
 // Variables
 @import "_variables/breakpoints.less";
 @import "_variables/colors.less";
 @import "_variables/scaffolding.less";
 @import "_variables/typography.less";
+
+// Vendor CSS
+@import (less) "../../vendors/css/owl.carousel.min.css";
+@import (less) "../../vendors/css/owl.theme.default.min.css";
 
 // Bootstrap
 @import "bootstrap.less";
@@ -37,21 +23,42 @@
 @import "_mixins/flex.less";
 @import "_mixins/forms.less";
 @import "_mixins/position.less";
+@import "_mixins/transitions.less";
 @import "_mixins/typography.less";
 @import "_mixins/user-select.less";
 
 // Components
+@import "_components/alert.less";
 @import "_components/animations.less";
 @import "_components/buttons.less";
+@import "_components/badge.less";
+@import "_components/collapse.less";
 @import "_components/dropdown-menu.less";
+@import "_components/emotions.less"; // need to overhaul bloated code
 @import "_components/forms.less";
 @import "_components/grid.less";
+@import "_components/image-gallery.less";  // need to overhaul bloated code
+@import "_components/image-slider.less"; // need to overhaul bloated code
+@import "_components/image-zoom.less"; // need to overhaul bloated code
+@import "_components/input-group.less";
 @import "_components/language.less";
+@import "_components/list-group.less";
+@import "_components/loading-indicator.less"; // need to overhaul bloated code
+@import "_components/menu-scroller.less";
+@import "_components/modal.less"; // need to overhaul bloated code
 @import "_components/navs.less";
-@import "_components/offcanvas-menu.less";
+@import "_components/offcanvas-button.less"; // need to overhaul bloated code
+@import "_components/offcanvas-menu.less"; // need to overhaul bloated code
 @import "_components/overlay.less";
 @import "_components/panel.less";
+@import "_components/print.less";
+@import "_components/product-badges.less";
+@import "_components/product-slider.less"; // need to overhaul bloated code
+@import "_components/product-table.less";
 @import "_components/range-slider.less";
 @import "_components/scaffolding.less";
 @import "_components/search.less";
+@import "_components/service-list.less";
+@import "_components/step-box.less";
+@import "_components/tab-menu.less"; // need to overhaul bloated code
 @import "_components/visibility.less";

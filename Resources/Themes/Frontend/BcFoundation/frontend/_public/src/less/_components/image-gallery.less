@@ -1,0 +1,156 @@
+/*
+Image gallery element
+====================================================
+Defines the styles for the image gallery element that shows thumbnails of the product pictures in a slim slider element.
+
+It is displayed on the product detail page.
+*/
+
+.image--gallery {
+    .image-slider--container {
+        .unitize(bottom, 90);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: auto;
+        margin: 0;
+    }
+	
+	.image-slider--slide {
+		height: 100%;
+	}
+
+    &.no--thumbnails .image-slider--container {
+        bottom: 0;
+    }
+
+    .image-slider--item {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        cursor: default;
+
+        .image--element {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            width: auto;
+        }
+
+        .image--media, img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+
+    .image-slider--thumbnails {
+		&:extend(.border-top);
+        .unitize-padding(10, 15);
+        .unitize(height, 90);
+        background: @gray-light;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        display: block;
+
+        .thumbnails--arrow {
+			&:extend(.product-slider--arrow.is--horizontal);
+			&:extend(.border-full);
+			box-shadow: 0 0 0.8rem rgba(0,0,0,.25);
+			border-radius: 0;
+			background-color: #fff;
+			
+			&:before {
+				&:extend([class^="icon--"]);
+			}
+
+            &.is--left {
+                border-left: 0 none !important;
+				
+				&::before {
+					content: @icon--arrow-left;
+				}
+            }
+
+            &.is--right {
+				left: auto;
+                border-right: 0 none !important;
+				
+				&::before {
+					content: @icon--arrow-right;
+				}
+            }
+			
+            &.is--top, &.is--bottom {
+                &:extend(.display-none);
+            }
+        }
+		
+		.thumbnail--link {
+			.unitize-margin(0, 10, 0, 0);
+			display: inline-block;
+			background-color: #fff;
+		}
+		
+		.image-slider--thumbnails-slide {
+			&:extend(.display-flex);
+			&:extend(.align-items-center);
+			height: 100%;
+			.unitize-margin(0, 10);
+			left: auto;
+			top: auto;
+		}
+    }
+
+    .button--zoom-in,
+    .button--zoom-out,
+    .button--zoom-reset {
+		&:extend(.position-absolute);
+        .unitize(top, 10);
+        .unitize(left, 10);
+        .unitize(font-size, 10);
+        .unitize-padding(11, 11);
+		line-height: 1;
+
+        &:hover {
+            z-index: 100;
+        }
+    }
+
+    .button--zoom-out {
+    }
+
+    .button--zoom-reset {
+        .unitize(left, 53);
+    }
+
+    .button--zoom-in {
+        .unitize(left, 96);
+    }
+}
+
+.image-gallery--modal {
+    .modal--close {
+        .unitize(top, 10);
+        .unitize(width, 34);
+        .unitize(height, 34);
+        .unitize(line-height, 32);
+    }
+}
+
+@media screen and(min-width: @desktopViewportWidth) {
+    .js--image-gallery {
+        width: 80%;
+        height: 80%;
+    }
+}

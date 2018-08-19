@@ -26,3 +26,12 @@
 	width: auto;
 	float: none;
 }
+
+@media screen and (min-width: @phoneLandscapeViewportWidth) {
+	.col--sm {
+		.unitize(padding-left, 15);
+		.unitize(padding-right, 15);
+		width: auto;
+		float: none;
+	}
+}

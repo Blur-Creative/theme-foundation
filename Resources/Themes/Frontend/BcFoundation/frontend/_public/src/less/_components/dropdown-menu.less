@@ -4,13 +4,14 @@
 	&:extend(.btn--icon-node all);
 	
 	.text-node {
-		.unitize(margin-right, 15);
+		
 	}
 	
 	&:after {
 		&:extend(.display-block);
 		&:extend([class^="icon--"]);
 		content: @icon--arrow-down;
+		.unitize(margin-left, 10);
 		font-size: 60%;
 	}
 }

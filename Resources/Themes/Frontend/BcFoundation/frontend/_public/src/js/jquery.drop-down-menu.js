@@ -22,8 +22,6 @@
             var me = this,
                 dropdown = me.opts.dropdownCls;
 
-			console.log($(event.target).parents(dropdown));
-			
             me.applyDataAttributes();
 			
             if ($(event.target).parents(dropdown).is(dropdown)) {
@@ -48,8 +46,6 @@
         onClickBody: function(event) {
             var me = this,
                 dropdown = me.opts.dropdownCls;
-			
-			console.log($(event.target).parents(dropdown));
 
             if ($(event.target).parents(dropdown).is(dropdown)) {
 				event.stopPropagation();

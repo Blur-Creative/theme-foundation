@@ -1,3 +1,12 @@
+body {
+	&:extend(.font-stack-base);
+	.unitize(font-size, @font-size-base);
+	
+	.no--scroll & {
+		overflow: hidden;
+	}
+}
+
 img {
 	&:extend(.img-fluid);
 }
@@ -6,4 +15,8 @@ button, html [type="button"] {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: @line-height-base;
 }

@@ -1,0 +1,35 @@
+.product--badges {
+	&:extend(.display-flex);
+	&:extend(.flex-wrap);
+	&:extend(.align-items-start);
+	&:extend(.justify-content-start);
+    width: 100%;
+	
+	.product--badge {
+		.unitize(font-size, 12);
+		.unitize-padding(5, 10);
+		.unitize-margin(0, 1);
+		font-weight: 600;
+		line-height: @line-height-base;
+		
+		&.badge--esd {
+			background-color: @brand-info;
+			color: @brand-light;
+		}
+		
+		&.badge--discount {
+			background-color: @brand-danger;
+			color: @brand-light;
+		}
+		
+		&.badge--newcomer {
+			background-color: @brand-success;
+			color: @brand-light;
+		}
+		
+		&.badge--recommend {
+			background-color: @brand-dark;
+			color: @brand-light;
+		}
+	}
+}

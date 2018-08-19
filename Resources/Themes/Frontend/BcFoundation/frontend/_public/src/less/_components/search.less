@@ -17,6 +17,12 @@
 	
 	.results--list {
 		&:extend(.list--unstyled);
+		margin-bottom: 0;
+		
+		.entry--no-results {
+			color: @text-muted;
+			padding: (@spacer * 2);
+		}
 		
 		.search-result--link {
 			&:extend(.display-flex);

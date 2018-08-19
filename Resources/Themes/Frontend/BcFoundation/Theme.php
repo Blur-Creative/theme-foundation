@@ -47,7 +47,7 @@ SHOPWARE_EOD;
 		'gray-light' => 'screen(@gray, @shade-400)',
 		'gray-dark' => 'multiply(@gray, @shade-400)',
 		// border colors
-		'border-color' => '@gray',
+		'border-color' => 'rgba(0, 0, 0, 0.15)',
 		// highlight colors
 		'highlight-success' => '#28a745',
 		'highlight-error' => '#dc3545',
@@ -62,6 +62,7 @@ SHOPWARE_EOD;
 		'btn-default-hover-border-color' => '@btn-default-border-color',
 		'btn-primary-top-bg' => '@btn-default-top-bg',
 		'btn-primary-bottom-bg' => '@btn-default-bottom-bg',
+        'btn-primary-hover-bg' => '@brand-primary-light',
 		'btn-secondary-top-bg' => '@btn-default-top-bg',
 		'btn-secondary-bottom-bg' => '@btn-default-bottom-bg',
 		'btn-secondary-hover-bg' => '@brand-secondary-light',
@@ -70,7 +71,7 @@ SHOPWARE_EOD;
 		// forms
 		'input-bg' => '#ffffff',
 		'input-color' => '@text-color',
-		'input-font-size' => '16',
+		'input-font-size' => '14',
 		'input-focus-color' => '@text-color',
 		'input-placeholder-color' => '@gray-dark',
 	];
@@ -83,8 +84,11 @@ SHOPWARE_EOD;
     protected $javascript = [
 		// vendors
 		'vendors/js/bootstrap.bundle.min.js',
+		'vendors/js/owl.carousel.min.js',
 		// internal
 		'src/js/jquery.drop-down-menu.js',
+		'src/js/jquery.bc.sidebar-category-nav.js',
+		'src/js/jquery.bc.sticky-nav.js',
 		'src/js/jquery.shopware-responsive.js'
     ];
 	

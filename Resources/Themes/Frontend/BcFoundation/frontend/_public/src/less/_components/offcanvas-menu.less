@@ -12,14 +12,14 @@ The functionality is provided by the `jquery.off-canvas-menu.js` file.
 
 // Is used for the necessary styling of an off-canvas menu
 .off-canvas {
+	&:extend(.display-none);
+	&:extend(.position-fixed);
     .transition(all 0.45s cubic-bezier(.3,0,.15,1));
     .transform-style(preserve-3d);
     .unitize-width(280);
     background: #fff;
-    position: fixed;
     top: 0;
     bottom: 0;
-    display: none;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 1050;
@@ -32,10 +32,14 @@ The functionality is provided by the `jquery.off-canvas-menu.js` file.
     &.is--right {
         .transform(translateX(100%));
         right: 0;
+		
+		.close--off-canvas {
+			&:extend(.btn.is--icon-left all);
+		}
     }
 
     &.is--active {
-        display: block;
+        &:extend(.display-block);
     }
 
     &.is--open {
@@ -50,12 +54,14 @@ The functionality is provided by the `jquery.off-canvas-menu.js` file.
     &.no--transitions {
         .transition(none);
     }
-
-    .buttons--off-canvas {
-        display: block;
-    }
-
+	
     .close--off-canvas {
+		&:extend(.btn);
+		&:extend(.btn:hover);
+		&:extend(.btn.is--block);
+		&:extend(.btn.is--icon-right all);
+		border: 0 none;
+		border-radius: 0;
 		/*
         .unitize-padding(2, 10);
         .unitize(line-height, 38);
@@ -72,6 +78,14 @@ The functionality is provided by the `jquery.off-canvas-menu.js` file.
         }
         */
     }
+	
+	.navigation--headline {
+		&:extend(.panel--title);
+		&:extend(.panel--title.is--small);
+		&:extend(.panel--title.is--underline);
+		&:extend(.panel--title.is--overline);
+		background-color: @gray-light;
+	}
 
     .link--go-main {
 		/*
@@ -90,25 +104,39 @@ The functionality is provided by the `jquery.off-canvas-menu.js` file.
         */
     }
 
-    .sidebar--navigation .navigation--link {
-		/*
-        .unitize-padding(2, 10);
-        .unitize(line-height, 38);
-
-        .is--icon-right {
-            margin-top: 0;
-        }
-
-        .is--icon-left {
-            .unitize-margin(0, 10, 0, 0);
-            float: left;
-        }
-        */
-    }
-}
-
-.buttons--off-canvas {
-    display: none;
+    .sidebar--navigation {
+		
+		.navigation--item {
+			&:extend(.display-flex);
+			&:extend(.border-bottom);
+		}
+		
+		.navigation--link {
+			.flexbox-item(1 1 100%);
+			.unitize(padding-left, 20);
+			.unitize(padding-right, 20);
+			/*
+			.unitize-padding(2, 10);
+			.unitize(line-height, 38);
+	
+			.is--icon-right {
+				margin-top: 0;
+			}
+	
+			.is--icon-left {
+				.unitize-margin(0, 10, 0, 0);
+				float: left;
+			}
+			*/
+		}
+		
+		.subcategory--indicator {
+			&:extend(.btn);
+			.flexbox-item(0 1 auto);
+			border: 0;
+			border-radius: 0;			
+		}
+	}
 }
 
 .page-wrap {
@@ -157,15 +185,7 @@ The functionality is provided by the `jquery.off-canvas-menu.js` file.
 	.unitize-margin(0, 10, 0, 10);
 	*/
 }
-.navigation--headline {
-	/*
-	.unitize-margin(16, 10, 6, 10);
-    .unitize(line-height, 26);
-    color: @text-color-dark;
-    font-weight: @font-bold-weight;
-	font-size: 1em;
-	*/
-}
+
 .sidebar--navigation {
 	/*
 	.border-radius();
@@ -187,10 +207,11 @@ The functionality is provided by the `jquery.off-canvas-menu.js` file.
 	*/
 }
 
-@media screen and(min-width: @tabletViewportWidth) {
+
 
     // Reset the styles of the standard off-canvas elements on higher screen sizes
-    .off-canvas {
+	/*
+    .off-canvas-hide-md {
         .translate(0, 0);
         .transition(none);
         display: block;
@@ -213,7 +234,7 @@ The functionality is provided by the `jquery.off-canvas-menu.js` file.
         }
     }
 
-    .sidebar-main {
+    .sidebar-main-hide-md {
         .entry--close-off-canvas {
             display: none;
         }
@@ -223,4 +244,20 @@ The functionality is provided by the `jquery.off-canvas-menu.js` file.
             display: none;
         }
     }
+    */
+	
+.off-canvas-reset-md {
+	@media screen and(min-width: @tabletViewportWidth) {
+		.position-relative-reset;
+		position: static !important	;
+		transition: unset;
+		width: auto;
+		background: none transparent;
+		z-index: 5;
+	}
+	
+	.close--off-canvas {
+		&:extend(.display-none-md);
+	}
 }
+

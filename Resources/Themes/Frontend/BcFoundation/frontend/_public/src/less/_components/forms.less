@@ -1,3 +1,7 @@
+label {
+	margin-bottom: 0;
+}
+
 textarea,
 input[type="text"],
 input[type="search"],
@@ -26,7 +30,7 @@ input[type="tel"] {
 		height: auto;
 		cursor: pointer;
 		.unitize-padding(10, 15);
-		.unitize(padding-right, (40 + 15));
+		.unitize(padding-right, (40));
 		.unitize(font-size, @input-font-size);
 		.unitize(border-width, 1);
 		width: 100%;
@@ -40,8 +44,25 @@ input[type="tel"] {
 			&:extend(.form-control:focus);
 		}
 		
+		&:disabled {
+			cursor: not-allowed;
+			background-color: @gray-light;
+			
+			&:hover {
+				border-color: @input-border;
+			}
+		}
+		
 		&.has--error {
 			&:extend(.form-control.has--error);
 		}
+	}
+}
+
+.form-row {
+	
+	.col, .form-group {
+		.unitize(padding-left, 5);
+		.unitize(padding-right, 5);
 	}
 }

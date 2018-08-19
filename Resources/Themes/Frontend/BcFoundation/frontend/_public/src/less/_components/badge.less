@@ -1,0 +1,49 @@
+.badge {
+	&:extend(.text-center);
+	&:extend(.font-stack-base);
+	font-weight: 600;
+	.unitize(padding, 8);
+	font-size: 100%;
+	background-color: #fff;
+	border: 0 solid @border-color;
+	.unitize(border-width, 1);
+	.unitize(min-width, 24);
+	
+	&.is--primary {
+		background-color: @brand-primary;
+		border-color: multiply(@brand-primary, @shade-200);
+		color: @text-white;
+	}
+	&.is--success {
+		background-color: @brand-success;
+		border-color: multiply(@brand-success, @shade-200);
+		color: @text-white;
+	}
+	&.is--info {
+		background-color: @brand-info;
+		border-color: multiply(@brand-info, @shade-200);
+		color: @text-white;
+	}
+	&.is--light {
+		background-color: @brand-light;
+		border-color: multiply(@brand-light, @shade-200);
+		color: @brand-dark;
+	}
+	
+	&.is--small,
+	&.is--minimal {
+		font-size: 75%;
+		.unitize(padding, 6);
+	}
+}
+
+.badge-position-top-left {
+	&:extend(.position-absolute);
+	.unitize(top, -8);
+	.unitize(left, -8);
+}
+.badge-position-top-right {
+	&:extend(.position-absolute);
+	.unitize(top, -8);
+	.unitize(right, -8);
+}

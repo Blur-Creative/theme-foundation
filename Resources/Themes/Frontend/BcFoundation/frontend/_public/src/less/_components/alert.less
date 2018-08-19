@@ -1,0 +1,57 @@
+.alert {
+	&:extend(.display-flex);
+	&:extend(.align-items-center);
+	border-color: @border-color;
+	
+	.alert--icon {
+		.unitize(margin-right, 15);
+	}
+	
+	&.is--success {
+		background-color: screen(@brand-success, @shade-300);
+		border-color: screen(@brand-success, @shade-400);
+		color: multiply(@brand-success, @shade-500);
+		
+		.alert--link, a {
+			font-weight: 700;
+			color: multiply(@brand-success, @shade-500);
+		}
+	}
+	&.is--info {
+		background-color: screen(@brand-info, @shade-300);
+		border-color: screen(@brand-info, @shade-400);
+		color: multiply(@brand-info, @shade-500);
+		
+		.alert--link, a {
+			font-weight: 700;
+			color: multiply(@brand-info, @shade-500);
+		}
+	}
+	&.is--warning {
+		background-color: screen(@brand-warning, @shade-300);
+		border-color: screen(@brand-warning, @shade-400);
+		color: multiply(@brand-warning, @shade-500);
+		
+		.alert--link, a {
+			font-weight: 700;
+			color: multiply(@brand-warning, @shade-500);
+		}
+	}
+	&.is--error {
+		background-color: screen(@brand-danger, @shade-300);
+		border-color: screen(@brand-danger, @shade-400);
+		color: multiply(@brand-danger, @shade-500);
+		
+		.alert--link, a {
+			font-weight: 700;
+			color: multiply(@brand-danger, @shade-500);
+		}
+	}
+}
+
+.alert-dismissible {
+	
+	.close {
+		.unitize(font-size, 14);
+	}
+}

@@ -1,0 +1,319 @@
+/*
+Image slider element
+============================================
+Defines the styles for the image slider element that is a part of the basic Shopware 5 shopping world elements.
+
+The element can be added by using the Shopware 5 backend shopping world editor.
+
+The element contains thumbnail image previews, navigation dots and navigation arrows to change the current active image.
+
+It contains the viewport specific styles inside media queries.
+*/
+
+.image-slider {
+    .clearfix();
+    .backface-visibility(hidden);
+    display: block;
+    z-index: 90;
+    position: relative;
+}
+
+.image-slider--container {
+    //.unitize-height(200);
+    .tap-highlight-color(rgba(0, 0, 0, 0));
+    .backface-visibility(hidden);
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+    .arrow {
+		&:extend(.product-slider--arrow);
+		&:extend(.product-slider--arrow.is--horizontal);
+		/*
+        .unitize-width(30);
+        .unitize-height(70);
+        .unitize(-35, 16, margin-top);
+        .unitize(line-height, 68);
+        .unitize(font-size, 16);
+        .user-select(none);
+        .touch-callout(none);
+        .tap-highlight-color(rgba(0, 0, 0, 0));
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        position: absolute;
+        top: 50%;
+        z-index: 100;
+        //font-family: @sw-icon-fontname;
+        text-align: center;
+        color: @text-color;
+        cursor: pointer;
+        display: none;
+        */
+		
+		&:before {
+			&:extend([class^="icon--"]);
+		}
+		
+		&.is--hidden {
+			&:extend(.display-none);
+		}
+
+        &.is--left {
+            left: 0;
+
+            &:before {
+                content: @icon--arrow-left;
+            }
+        }
+
+        &.is--right {
+            right: 0;
+
+            &:before {
+                content: @icon--arrow-right;
+            }
+        }
+
+        &:hover {
+            &:extend(.product-slider--arrow:hover);
+        }
+    }
+
+    &.is--dragging .image-slider--item {
+        cursor: move;
+    }
+}
+
+.image-slider--slide {
+    .clearfix();
+    .backface-visibility(hidden);
+    display: block;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    font-size: 0;
+    -ms-touch-action: pan-y;
+	
+	@media screen and(min-width: @tabletViewportWidth) {
+		.unitize(height, 400);
+	}
+}
+
+.image-slider--item {
+    .backface-visibility(hidden);
+	vertical-align: top;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+
+    .image--element {
+        display: inline-block;
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .image--media {
+        &:extend(.display-flex);
+        &:extend(.align-items-center);
+        &:extend(.justify-content-center);
+		height: 100%;
+		width: 100%;		
+    }
+}
+
+.image-slider--dots {
+    .unitize-padding(10, 0);
+    text-align: center;
+}
+
+.image-slider--thumbnails {
+    display: none;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+	
+	.unitize-width(70);
+	height: 100%;
+	.unitize-margin(0, 20, 0, 0);
+	position: relative;
+	top:0;
+	left: 0;
+	float: left;
+
+    .image-slider--thumbnails-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .thumbnail--link {
+		&:extend(.display-block);
+        .unitize-width(70);
+        .unitize-height(70);
+        .unitize-padding(5, 5);
+        .unitize-margin(0, 0, 10, 0);
+        .unitize(line-height, 57);
+        .border-radius();
+        .tap-highlight-color();
+        text-align: center;
+        border: 1px solid @border-color;
+
+        &.is--active {
+            border-color: @brand-primary;
+        }
+    }
+
+    .thumbnail--image {
+        display: inline;
+        vertical-align: middle;
+    }
+
+    .thumbnails--arrow {
+		&:extend(.product-slider--arrow);
+		&:extend(.product-slider--arrow.is--vertical);
+		&:extend(.display-none);
+		/*
+        .unitize-width(20);
+        .unitize-height(70);
+        .unitize(line-height, 70);
+        .unitize(font-size, 14);
+        .border-radius();
+        .user-select(none);
+        .touch-callout(none);
+        .tap-highlight-color(rgba(0, 0, 0, 0));
+        .linear-gradient(#ffffff, @gray-light);
+        display: none;
+        position: absolute;
+        z-index: 100;
+        //font-family: @sw-icon-fontname;
+        text-align: center;
+        color: @text-color;
+        border: 1px solid rgba(255, 255, 255, 0.85);
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.85);
+        */
+
+		&:before {
+			&:extend([class^="icon--"]);
+		}
+		
+        &:hover {
+            &:extend(.product-slider--arrow:hover);
+        }
+
+        &.is--top,
+        &.is--bottom {
+			/*
+            .unitize(font-size, 8);
+            .unitize-width(70);
+            .unitize-height(24);
+            .unitize-padding(2, 0, 0, 0);
+            .unitize(line-height, 18);
+            */
+        }
+
+        &.is--top {
+            top: 0;
+
+            &::before {
+                content: @icon--arrow-up;
+            }
+        }
+
+        &.is--bottom {
+            bottom: 0;
+
+            &::before {
+                content: @icon--arrow-down;
+            }
+        }
+
+        &.is--left {
+            .border-radius-multi(0, 3px, 3px, 0);
+            .unitize-width(24, 16);
+            top: 0;
+            left: 0;
+
+            &::before {
+                //content: @sw-icon-arrow-left;
+            }
+        }
+
+        &.is--right {
+            .border-radius-multi(3px, 0, 0, 3px);
+            .unitize-width(24, 16);
+            top: 0;
+            right: 0;
+
+            &::before {
+                //content: @sw-icon-arrow-right;
+            }
+        }
+
+        &.is--active {
+			&:extend(.display-flex);
+        }
+    }
+}
+
+@media screen and(min-width: @tabletViewportWidth) {
+
+
+}
+
+@media screen and (min-width: @tabletLandscapeViewportWidth) {
+
+    .image-slider--thumbnails {
+        display: block;
+    }
+
+    .image-slider--container {
+        .unitize(margin-bottom, 30);
+
+        &.no--thumbnails {
+            margin-bottom: 0;
+        }
+
+        &.no--image .image-slider--item {
+            cursor: default;
+        }
+    }
+
+	/*
+    .image-slider--dots {
+        .unitize(top, 405);
+        position: absolute;
+        width: 100%;
+    }
+    */
+}
+
+@media screen and(min-width: @desktopViewportWidth) {
+
+    .image-slider--container {
+        margin-bottom: 0;
+    }
+
+    .image-slider--thumbnails {
+
+        .thumbnail--link {
+            
+        }
+    }
+
+	/*
+    .image-slider--dots {
+        .unitize-padding(10, 0, 10, 90);
+        position: relative;
+        top: auto;
+        display: block;
+    }
+    */
+}

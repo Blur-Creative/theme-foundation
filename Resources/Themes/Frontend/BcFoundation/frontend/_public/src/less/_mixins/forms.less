@@ -4,17 +4,21 @@
 	appearance:         none;	
 }
 
-.form-placeholder(@color: @input-placeholder-color) {
+.form-placeholder(@color: @input-placeholder-color, @size: @input-font-size) {
 	&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		.unitize(font-size, @size);
 		color: @color;
 	}
 	&::-moz-placeholder { /* Firefox 19+ */
+		.unitize(font-size, @size);
 		color: @color;
 	}
 	&:-ms-input-placeholder { /* IE 10+ */
+		.unitize(font-size, @size);
 		color: @color;
 	}
 	&:-moz-placeholder { /* Firefox 18- */
+		.unitize(font-size, @size);
 		color: @color;
 	}	
 }
@@ -58,6 +62,12 @@
 		&:hover {
 			&:extend(.form-control.disabled);
 		}
+	}
+	
+	&.is--small {
+		line-height: @line-height-sm;
+		.unitize(font-size, (@input-font-size * 0.8));
+		.unitize-padding(8, 15);
 	}
 	
 	&.has--error {

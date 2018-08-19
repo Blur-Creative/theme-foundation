@@ -1,0 +1,38 @@
+.js--menu-scroller {
+    &:extend(.position-relative);
+    
+    .js--menu-scroller--arrow {
+        &:extend(.position-absolute);
+        &:extend(.display-flex);
+        &:extend(.align-items-center);
+        &:extend(.justify-content-center);
+        top: 50%;
+        height: 100%;
+        line-height: 1;
+        .unitize(font-size, 12);
+        .unitize(margin-top, -16);
+        .unitize(width, 32);
+        .unitize(height, 32);
+		border-radius: 50%;
+        background-color: @gray-light;
+        
+        .arrow--content {
+            &:extend([class*=" icon--"]);
+        }
+        
+        &.left--arrow {
+            .unitize(left, -16);
+            
+            .arrow--content {
+                &:extend(.icon--arrow-left all);
+            }
+        }
+        &.right--arrow {
+            .unitize(right, -16);
+            
+            .arrow--content {
+                &:extend(.icon--arrow-right all);
+            }
+        }
+    }
+}

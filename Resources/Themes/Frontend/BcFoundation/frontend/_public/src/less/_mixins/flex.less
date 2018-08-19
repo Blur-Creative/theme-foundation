@@ -59,6 +59,13 @@
  * Align Items
  */
 @media screen and (min-width: @phoneLandscapeViewportWidth) {
+	.justify-content-center-sm {
+		.flexbox-justify(center) !important;
+	}
+	.justify-content-end-sm {
+		.flexbox-justify(flex-end) !important;
+	}
+	
 	.align-items-stretch-sm {
 		.flexbox-align(stretch) !important;
 	}
@@ -74,8 +81,22 @@
 	.align-items-baseline-sm {
 		.flexbox-align(baseline) !important;
 	}
+	
+	.flex-wrap-sm {
+		.flexbox-wrap(wrap) !important;
+	}
+	.flex-nowrap-sm {
+		.flexbox-wrap(nowrap) !important;
+	}
 }
 @media screen and (min-width: @tabletViewportWidth) {
+	.justify-content-center-md {
+		.flexbox-justify(center) !important;
+	}
+	.justify-content-end-md {
+		.flexbox-justify(flex-end) !important;
+	}
+	
 	.align-items-stretch-md {
 		.flexbox-align(stretch) !important;
 	}
@@ -89,10 +110,27 @@
 		.flexbox-align(center) !important;
 	}
 	.align-items-baseline-md {
-		.flexbox-align(baseline)!important;
+		.flexbox-align(baseline) !important;
+	}
+	
+	.flex-wrap-md {
+		.flexbox-wrap(wrap) !important;
+	}
+	.flex-nowrap-md {
+		.flexbox-wrap(nowrap) !important;
 	}
 }
 @media screen and (min-width: @tabletLandscapeViewportWidth) {
+	.justify-content-start-lg {
+		.flexbox-justify(flex-start) !important;
+	}
+	.justify-content-center-lg {
+		.flexbox-justify(center) !important;
+	}
+	.justify-content-end-lg {
+		.flexbox-justify(flex-end) !important;
+	}
+	
 	.align-items-stretch-lg {
 		.flexbox-align(stretch) !important;
 	}
@@ -107,6 +145,13 @@
 	}
 	.align-items-baseline-lg {
 		.flexbox-align(baseline) !important;
+	}
+	
+	.flex-wrap-lg {
+		.flexbox-wrap(wrap) !important;
+	}
+	.flex-nowrap-lg {
+		.flexbox-wrap(nowrap) !important;
 	}
 }
 @media screen and (min-width: @desktopViewportWidth) {
@@ -124,6 +169,13 @@
 	}
 	.align-items-baseline-xl {
 		.flexbox-align(baseline) !important;
+	}
+	
+	.flex-wrap-xl {
+		.flexbox-wrap(wrap) !important;
+	}
+	.flex-nowrap-xl {
+		.flexbox-wrap(nowrap) !important;
 	}
 }
 

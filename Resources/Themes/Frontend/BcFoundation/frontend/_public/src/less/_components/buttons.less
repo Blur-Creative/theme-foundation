@@ -1,4 +1,5 @@
 .btn {
+	&:extend(.position-relative);
 	&:extend(.display-inline-flex);
 	&:extend(.align-items-center);
 	&:extend(.btn--size-base);
@@ -20,6 +21,12 @@
 	&:focus,
 	&.focus {
 		outline: 0;
+	}
+	
+	&.is--disabled,
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
 	}
 	
 	&.is--primary {
@@ -80,10 +87,30 @@
 	}
 	&.is--large {
 		&:extend(.btn--size-lg);
+		&:extend(.btn--icon-node-lg all);
 	}
 	
 	&.is--block {
-		&:extend(.justify-content-center);
 		width: 100%;
+	}
+	&.is--center {
+		&:extend(.justify-content-center);
+		&:extend(.text-center);
+	}
+	
+	&.is--icon-right {
+		
+		*,
+		* ~ i {
+			margin-left: auto;
+		}
+	}
+	&.is--icon-left {
+		
+		*,
+		i + * {
+			margin-right: auto;
+			margin-left: 0;
+		}
 	}
 }

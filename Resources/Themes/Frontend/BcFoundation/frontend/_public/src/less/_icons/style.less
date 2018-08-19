@@ -1,7 +1,7 @@
 @import "variables";
 
 @font-face {
-  font-family: 'Foundation-Icons';
+  font-family: @icon-set-name;
   src:  url('@{icomoon-font-path}/Foundation-Icons.eot?wd0l9n');
   src:  url('@{icomoon-font-path}/Foundation-Icons.eot?wd0l9n#iefix') format('embedded-opentype'),
     url('@{icomoon-font-path}/Foundation-Icons.ttf?wd0l9n') format('truetype'),
@@ -12,8 +12,9 @@
 }
 
 [class^="icon--"], [class*=" icon--"] {
+	display: inline-block;
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'Foundation-Icons';
+  font-family: @icon-set-name;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -26,6 +27,60 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.text-node {
+	display: inline-block;
+}
+
+svg.icon {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 0;
+  stroke: currentColor;
+  //fill: currentColor;
+  line-height: 1;
+}
+
+.icon--xing {
+  &:before {
+    content: @icon--xing; 
+  }
+}
+.icon--youtube {
+  &:before {
+    content: @icon--youtube; 
+  }
+}
+.icon--shopping-bag {
+  &:before {
+    content: @icon--shopping-bag; 
+  }
+}
+.icon--cart {
+  &:before {
+    content: @icon--cart; 
+  }
+}
+.icon--account {
+  &:before {
+    content: @icon--account; 
+  }
+}
+.icon--heart {
+  &:before {
+    content: @icon--heart; 
+  }
+}
+.icon--search {
+  &:before {
+    content: @icon--search; 
+  }
+}
+.icon--headset {
+  &:before {
+    content: @icon--headset; 
+  }
+}
 .icon--instagram {
   &:before {
     content: @icon--instagram; 
@@ -46,11 +101,6 @@
     content: @icon--menu; 
   }
 }
-.icon--search {
-  &:before {
-    content: @icon--search; 
-  }
-}
 .icon--phone {
   &:before {
     content: @icon--phone; 
@@ -59,11 +109,6 @@
 .icon--filter {
   &:before {
     content: @icon--filter; 
-  }
-}
-.icon--cart {
-  &:before {
-    content: @icon--cart; 
   }
 }
 .icon--mail {
@@ -86,7 +131,7 @@
     content: @icon--star; 
   }
 }
-.icon--star-outline, .icon--star-empty {
+.icon--star-outline {
   &:before {
     content: @icon--star-outline; 
   }
@@ -116,11 +161,6 @@
     content: @icon--layout; 
   }
 }
-.icon--heart {
-  &:before {
-    content: @icon--heart; 
-  }
-}
 .icon--compare {
   &:before {
     content: @icon--compare; 
@@ -144,11 +184,6 @@
 .icon--arrow-left {
   &:before {
     content: @icon--arrow-left; 
-  }
-}
-.icon--account {
-  &:before {
-    content: @icon--account; 
   }
 }
 .icon--logout {
@@ -1496,4 +1531,3 @@
     content: @icon--digg; 
   }
 }
-
