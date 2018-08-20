@@ -200,18 +200,72 @@ body.emotion--preview {
     .createGrid(12); // Container with twelve columns
 
     // Hide elements which are not visible in the current viewport
-    .is--hidden-s,
-    .is--hidden-m,
-    .is--hidden-l,
-    .is--hidden-xl {
-        display: block;
-    }
-
-    .is--hidden-xs {
-        display: none;
-    }
+	.is--hidden-xs {
+		&:extend(.is--hidden-xs);
+	}
+	.is--hidden-s {
+		&:extend(.is--hidden-s);
+	}
+	.is--hidden-m {
+		&:extend(.is--hidden-m);
+	}
+	.is--hidden-l {
+		&:extend(.is--hidden-l);
+	}
+	.is--hidden-xl {
+		&:extend(.is--hidden-xl);
+	}
 
     // Hide all sizer which don't match the current viewport
+	.emotion--sizer-xs {
+		&:extend(.display-block);
+		&:extend(.display-none-sm);
+		
+		& ~ .emotion--sizer {
+            &:extend(.display-none);
+        }
+	}
+	
+	.emotion--sizer-s {
+		&:extend(.display-none);
+		&:extend(.display-block-sm);
+		&:extend(.display-none-md);
+		
+		& ~ .emotion--sizer {
+			 &:extend(.display-none-sm);
+		}
+	}
+	
+	.emotion--sizer-m {
+		&:extend(.display-none);
+		&:extend(.display-block-md);
+		&:extend(.display-none-lg);
+		
+		& ~ .emotion--sizer {
+			 &:extend(.display-none-md);
+		}
+	}
+	
+	.emotion--sizer-l {
+		&:extend(.display-none);
+		&:extend(.display-block-lg);
+		&:extend(.display-none-xl);
+		
+		& ~ .emotion--sizer {
+			 &:extend(.display-none-lg);
+		}
+	}
+	
+	.emotion--sizer-xl {
+		&:extend(.display-none);
+		&:extend(.display-block-xl);
+		
+		& ~ .emotion--sizer {
+			 &:extend(.display-none-xl);
+		}
+	}
+	
+	/*
     .emotion--sizer-s,
     .emotion--sizer-m,
     .emotion--sizer-l,
@@ -228,117 +282,134 @@ body.emotion--preview {
             display: none;
         }
     }
+    */
 
     @media screen and(min-width: @phoneLandscapeViewportWidth) {
-        .is--hidden-xs,
-        .is--hidden-m,
-        .is--hidden-l,
-        .is--hidden-xl {
-            display: block;
-        }
-
-        .is--hidden-s {
-            display: none;
-        }
-
-        .emotion--sizer-xs,
-        .emotion--sizer-m,
-        .emotion--sizer-l,
-        .emotion--sizer-xl {
-            display: none;
-        }
-
-        .emotion--sizer-s {
-            display: block;
-
-            & ~ .emotion--sizer {
-                display: none;
-            }
-        }
+		/*
+			.is--hidden-xs,
+			.is--hidden-m,
+			.is--hidden-l,
+			.is--hidden-xl {
+				display: block;
+			}
+	
+			.is--hidden-s {
+				display: none;
+			}
+        */
+		
+		/*
+			.emotion--sizer-xs,
+			.emotion--sizer-m,
+			.emotion--sizer-l,
+			.emotion--sizer-xl {
+				display: none;
+			}
+	
+			.emotion--sizer-s {
+				display: block;
+	
+				& ~ .emotion--sizer {
+					display: none;
+				}
+			}
+        */
     }
 
     @media screen and(min-width: @tabletViewportWidth) {
-        .is--hidden-xs,
-        .is--hidden-s,
-        .is--hidden-l,
-        .is--hidden-xl {
-            display: block;
-        }
+		/*
+			.is--hidden-xs,
+			.is--hidden-s,
+			.is--hidden-l,
+			.is--hidden-xl {
+				display: block;
+			}
+	
+			.is--hidden-m {
+				display: none;
+			}
+        */
 
-        .is--hidden-m {
-            display: none;
-        }
-
-        .emotion--sizer-s,
-        .emotion--sizer-xs,
-        .emotion--sizer-l,
-        .emotion--sizer-xl {
-            display: none;
-        }
-
-        .emotion--sizer-m {
-            display: block;
-
-            & ~ .emotion--sizer {
-                display: none;
-            }
-        }
+		/*
+			.emotion--sizer-s,
+			.emotion--sizer-xs,
+			.emotion--sizer-l,
+			.emotion--sizer-xl {
+				display: none;
+			}
+	
+			.emotion--sizer-m {
+				display: block;
+	
+				& ~ .emotion--sizer {
+					display: none;
+				}
+			}
+        */
     }
 
     @media screen and(min-width: @tabletLandscapeViewportWidth) {
-        .is--hidden-xs,
-        .is--hidden-s,
-        .is--hidden-m,
-        .is--hidden-xl {
-            display: block;
-        }
+		/*
+			.is--hidden-xs,
+			.is--hidden-s,
+			.is--hidden-m,
+			.is--hidden-xl {
+				display: block;
+			}
+	
+			.is--hidden-l {
+				display: none;
+			}
+        */
 
-        .is--hidden-l {
-            display: none;
-        }
-
-        .emotion--sizer-xs,
-        .emotion--sizer-s,
-        .emotion--sizer-m,
-        .emotion--sizer-xl {
-            display: none;
-        }
-
-        .emotion--sizer-l {
-            display: block;
-
-            & ~ .emotion--sizer {
-                display: none;
-            }
-        }
+		/*
+			.emotion--sizer-xs,
+			.emotion--sizer-s,
+			.emotion--sizer-m,
+			.emotion--sizer-xl {
+				display: none;
+			}
+	
+			.emotion--sizer-l {
+				display: block;
+	
+				& ~ .emotion--sizer {
+					display: none;
+				}
+			}
+		*/
     }
 
     @media screen and(min-width: @desktopViewportWidth) {
-        .is--hidden-xs,
-        .is--hidden-s,
-        .is--hidden-m,
-        .is--hidden-l {
-            display: block;
-        }
+		/*
+			.is--hidden-xs,
+			.is--hidden-s,
+			.is--hidden-m,
+			.is--hidden-l {
+				display: block;
+			}
+	
+			.is--hidden-xl {
+				display: none;
+			}
+        */
 
-        .is--hidden-xl {
-            display: none;
-        }
-
-        .emotion--sizer-s,
-        .emotion--sizer-xs,
-        .emotion--sizer-m,
-        .emotion--sizer-l {
-            display: none;
-        }
-
-        .emotion--sizer-xl {
-            display: block;
-
-            & ~ .emotion--sizer {
-                display: none;
-            }
-        }
+		/*
+			.emotion--sizer-s,
+			.emotion--sizer-xs,
+			.emotion--sizer-m,
+			.emotion--sizer-l {
+				display: none;
+			}
+	
+			.emotion--sizer-xl {
+				display: block;
+	
+				& ~ .emotion--sizer {
+					display: none;
+				}
+			}
+        */
     }
 }
 
