@@ -53,6 +53,11 @@ SHOPWARE_EOD;
 		'highlight-error' => '#dc3545',
 		'highlight-notice' => '#ffc107',
 		'highlight-info' => '#156beb',
+		// typography
+		'font-light-weight' => '300',
+		'font-base-weight' => '400',
+		'font-medium-weight' => '600',
+		'font-bold-weight' => '800',
 		// buttons
 		'btn-default-top-bg' => 'rgba(255,255,255,0.1)',
 		'btn-default-bottom-bg' => 'rgba(255,255,255,0)',
