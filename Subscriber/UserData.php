@@ -1,5 +1,5 @@
 <?php
-namespace BlurThemeViews\Subscriber;
+namespace BlurThemeFoundation\Subscriber;
 
 use Enlight\Event\SubscriberInterface;
 use Shopware\Components\Plugin\ConfigReader;
