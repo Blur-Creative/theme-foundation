@@ -148,9 +148,9 @@ body.emotion--preview {
 
     // Emotion wrapper
 .emotion--wrapper {
-    display: block;
+	&:extend(.display-block);
     margin: 0 auto;
-    max-width: 1160px;
+	.unitize(max-width, 1260);
     overflow: hidden;
 
     &.is--fullscreen {
