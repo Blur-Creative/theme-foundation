@@ -1,3 +1,29 @@
 .is--hidden {
 	&:extend(.display-none);
 }
+.is--hidden-xs {
+	&:extend(.display-none);
+	&:extend(.display-block-sm);
+}
+.is--hidden-s,
+.is--hidden-sm {
+	&:extend(.display-block);
+	&:extend(.display-none-sm);
+	&:extend(.display-block-md);
+}
+.is--hidden-m,
+.is--hidden-md {
+	&:extend(.display-block);
+	&:extend(.display-none-md);
+	&:extend(.display-block-lg);
+}
+.is--hidden-l,
+.is--hidden-lg {
+	&:extend(.display-block);
+	&:extend(.display-none-lg);
+	&:extend(.display-block-xl);
+}
+.is--hidden-xl {
+	&:extend(.display-block);
+	&:extend(.display-none-xl);
+}
