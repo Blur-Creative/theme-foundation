@@ -1,9 +1,9 @@
-{extends file='parent:frontend/register/index.tpl'}
+{extends file='parent:frontend/checkout/shipping_payment.tpl'}
 
 {* Reset Block Step box *}
 {block name='frontend_index_navigation_categories_top'}
 
-	{if !$theme.checkoutHeader or ($theme.checkoutHeader == 1 && $toAccount == 1)}
+	{if !$theme.checkoutHeader}
 		{block name='frontend_index_navigation_main_config'}
 			{if $theme.main_navigation_alignment=='center'}
 				{$navigation_main_aligment = 'navigation-main-center'}
@@ -20,7 +20,6 @@
 			{/block}
 		</nav>
 	{/if}
-	
 {/block}
 
 {* Content top container *}
@@ -29,29 +28,7 @@
 	
 	{block name="frontend_index_content_step_box_include"}
 		{if !$toAccount}
-			{include file="frontend/register/steps.tpl" sStepActive="address"}
+			{include file="frontend/register/steps.tpl" sStepActive="paymentShipping"}
 		{/if}
 	{/block}
-{/block}
-
-{block name='frontend_register_index_form_submit'}
-	{* Submit button *}
-	<div class="panel--footer">
-		<ul class="nav register--action">
-			<li class="nav-item register--action-item">
-				<button type="submit" class="register--submit btn is--success" name="Submit">
-					<span class="text-node">
-						{if $sTarget == 'checkout'}
-							{s name="RegisterIndexNewAccountCheckout" namespace="themes/bcfoundation/frontend/account/index"}{/s}
-						{else}
-							{s name="RegisterIndexNewAccount" namespace="themes/bcfoundation/frontend/account/index"}{/s}
-						{/if}
-					</span>
-				</button>
-			</li>
-		</ul>
-	</div>
-{/block}
-
-{block name='frontend_register_index_advantages'}
 {/block}
