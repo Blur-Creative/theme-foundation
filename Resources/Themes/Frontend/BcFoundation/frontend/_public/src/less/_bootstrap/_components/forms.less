@@ -31,7 +31,7 @@
 	&:extend(.custom-control all);
 	.unitize(padding-top, 3);
 	.unitize(padding-bottom, 3);
-	    min-height: unset;
+	min-height: unset;
 }
 .custom-control-input {
 	&:extend(.custom-control-input all);
@@ -56,4 +56,8 @@
 .custom-control-label::before,
 .custom-control-label::after {
     top: 0.25rem;
+}
+
+.custom-control-label::before {
+	border: 1px solid @border-color;
 }

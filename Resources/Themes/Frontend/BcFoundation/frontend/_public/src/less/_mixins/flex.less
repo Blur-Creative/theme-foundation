@@ -23,6 +23,11 @@
     align-items: @align;
 }
 
+.flexbox-align-self(@align) {
+	-webkit-align-self:@align;
+	align-self:@align;
+}
+
 .flexbox-wrap(@wrap) {
     -webkit-flex-wrap: @wrap;
     flex-wrap: @wrap;
@@ -30,8 +35,8 @@
 
 .flexbox-item(@flex: none;@align: auto;@itemCenter: false;) {
 	.flexbox-item-flex(@flex);
-	-webkit-align-self:@align;
-	align-self:@align;
+	//-webkit-align-self:@align;
+	//align-self:@align;
 	.flexbox-item-margin(@itemCenter);
 }
 
