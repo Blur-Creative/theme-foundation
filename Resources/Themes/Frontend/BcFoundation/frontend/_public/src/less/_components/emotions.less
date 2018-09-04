@@ -614,86 +614,21 @@ body.emotion--preview {
     }
 }
 
-    // Product-Slider element
+// Product-Slider element
 .emotion--product-slider {
     width: 100%;
     height: 100%;
     position: relative;
 
     .emotion--mode-rows & {
-        .unitize-height(360);
-    }
-
-    .product-slider--title {
-        .unitize-height(55);
-        position: relative;
-        top: 0; left: 0;
-        z-index: 100;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .product-slider--content {
-        .unitize-padding(10, 10);
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0; left: 0;
-        z-index: 100;
-    }
-
-    .product-slider--title ~ .product-slider--content {
-        .unitize(padding-top, 65);
-    }
-
-    .product-slider--arrow {
-        &.arrow--next { border-right: 0 none; }
-        &.arrow--prev { border-left: 0 none; }
+        .unitize-height(410);
     }
 
     .box--emotion {
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        text-align: center;
-
-        .box--content {
-            padding: 0;
-            border: 0 none;
-        }
-
-        .product--info {
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product--image {
-            height: 60%;
-            margin: 0 auto;
-        }
-
-        .product--details {
-            max-height: 35%;
-            width: 100%;
-            margin-top: 5%;
-        }
-
-        .product--title {
-            .unitize(14, 16, font-size);
-            font-weight: @font-base-weight;
-            white-space: normal;
-        }
-
-        .product--price-info .price--unit {
-            .unitize-height(15);
-            .unitize(10, 16, font-size);
-        }
-
-        .product--price .price--default {
-            .unitize(14, 16, font-size);
-        }
+		&:extend(.text-center);
+		.product--price-info {
+			margin-bottom: 0;	
+		}
     }
 }
 
