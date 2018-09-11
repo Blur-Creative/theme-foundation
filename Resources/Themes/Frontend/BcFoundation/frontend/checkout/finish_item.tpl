@@ -13,3 +13,9 @@
         {$sBasketItem.quantity}
     </div>
 {/block}
+
+{* Voucher tax price *}
+{block name='frontend_checkout_cart_item_voucher_tax_price'}
+	<div class="panel--td column--quantity is--align-right">
+	</div>
+{/block}

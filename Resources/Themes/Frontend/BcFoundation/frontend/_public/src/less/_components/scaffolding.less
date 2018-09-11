@@ -1,6 +1,8 @@
 body {
 	&:extend(.font-stack-base);
 	.unitize(font-size, @font-size-base);
+	background-color: @body-bg;
+	color: @text-color;
 	
 	.no--scroll & {
 		overflow: hidden;
