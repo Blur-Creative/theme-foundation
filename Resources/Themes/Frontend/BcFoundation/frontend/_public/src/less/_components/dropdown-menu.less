@@ -23,7 +23,7 @@
 	width: 100%;
 	max-width: 18rem;
 	min-width: 12rem;
-	background-color: @dropdown-menu-bg;
+	background-color: @dropdown-menu-bg-color;
 	box-shadow: 0.2rem 0.2rem 1.5rem 0 rgba(0, 0, 0, 0.2);
 	border: 0 solid @border-color;
 	.unitize(border-width, 1);
@@ -43,7 +43,7 @@
 	
 	&:after {
 		border-color: transparent;
-		border-bottom-color: @dropdown-menu-bg;
+		border-bottom-color: @dropdown-menu-bg-color;
 		.unitize(border-width, @dropdown-menu-arrow-size);
 		.unitize(margin-left, -@dropdown-menu-arrow-size);
 	}
@@ -82,23 +82,24 @@
 	border: 0;
 	width: 100%;
 	background-color: transparent;
-	color: @brand-dark;
+	color: @button-link-color;
 	.unitize-padding(5, 20);
 	white-space: normal;
 	.unitize(font-size, 14);
 	cursor: pointer;
+	transition: all .5s;
 	
 	&:hover {
 		text-decoration: none;
-		color: @brand-dark;
-		background-color: @gray-light;
+		color: @button-link-color;
+		background-color: @dropdown-link-hover-bg-color;
 	}
 	
 	&:active,
 	&.active,
 	&:focus,
 	&.focus {
-		color: @text-white;
+		color: @btn-primary-text-color;
 		background-color: @brand-primary;
 	}	
 }

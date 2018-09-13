@@ -1,4 +1,5 @@
-@select-field-arrow-color-html:			replace( ~"@{gray-dark}" , "#" , "%23" );
+//@select-field-arrow-color:				@gray-dark;
+@select-field-arrow-color-html:			replace( ~"@{select-field-arrow-color}" , "#" , "%23" );
 
 label {
 	margin-bottom: 0;
@@ -37,6 +38,7 @@ input[type="tel"] {
 		.unitize(font-size, @input-font-size);
 		.unitize(border-width, 1);
 		width: 100%;
+		color: @text-color;
 		transition: all .3s;
 		-webkit-appearance: none;
 		-moz-appearance: none;
