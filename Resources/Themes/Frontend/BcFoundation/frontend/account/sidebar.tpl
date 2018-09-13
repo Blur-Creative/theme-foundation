@@ -25,11 +25,11 @@
 				<form name="sLogin" method="post" action="{url controller=account action=login}" class="account-signin-form">
 					<input name="sTarget" type="hidden" value="account" />
 					
-					<div class="form-group form-group-email">
+					<div class="form--group form--group-email">
 						<input name="email" type="email" placeholder="{s namespace='frontend/account/login' name='LoginLabelMail'}{/s}<" autocomplete="email" tabindex="1" value="{$sFormData.email|escape}" class="form-control is--small {if $sErrorFlag.email}instyle_error{/if}" />
 					</div>
 				
-					<div class="form-group form-group-password">
+					<div class="form--group form--group-password">
 						<div class="input-group">
 							<input name="password" type="password" placeholder="{s namespace='frontend/account/login' name="LoginLabelPassword"}{/s}" autocomplete="current-password" tabindex="2" class="form-control is--small {if $sErrorFlag.password}instyle_error{/if}" />
 							<div class="input-group-append">

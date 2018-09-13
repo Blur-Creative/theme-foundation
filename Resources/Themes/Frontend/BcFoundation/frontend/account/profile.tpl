@@ -60,11 +60,11 @@
                                 {/if}
                             {/block}
 
-                            <div class="form-row">
+                            <div class="form--row">
                                 
                                 {* Firstname *}
                                 {block name='frontend_account_profile_profile_input_firstname'}
-                                    <div class="form-group profile--firstname">
+                                    <div class="form--group profile--firstname">
                                         <input autocomplete="section-personal given-name"
                                                name="profile[firstname]"
                                                type="text"
@@ -78,7 +78,7 @@
 
                                 {* Lastname *}
                                 {block name="frontend_account_profile_profile_input_lastname"}
-                                    <div class="form-group profile--lastname">
+                                    <div class="form--group profile--lastname">
                                         <input autocomplete="section-personal family-name"
                                                name="profile[lastname]"
                                                type="text"
