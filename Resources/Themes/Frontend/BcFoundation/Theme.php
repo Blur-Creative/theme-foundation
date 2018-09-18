@@ -117,10 +117,10 @@ SHOPWARE_EOD;
 	];
 	
 	private $themeConfigDefaults = [
-		'mobileLogo' => 'frontend/_public/src/img/logos/logo--mobile.png'
-		'tabletLogo' => 'frontend/_public/src/img/logos/logo--tablet.png'
-		'tabletLandscapeLogo' => 'frontend/_public/src/img/logos/logo--tablet.png'
-		'desktopLogo' => 'frontend/_public/src/img/logos/logo--tablet.png'
+		'mobileLogo' => 'frontend/_public/src/img/logos/logo--mobile.png',
+		'tabletLogo' => 'frontend/_public/src/img/logos/logo--tablet.png',
+		'tabletLandscapeLogo' => 'frontend/_public/src/img/logos/logo--tablet.png',
+		'desktopLogo' => 'frontend/_public/src/img/logos/logo--tablet.png',
 	];
 
     /**
