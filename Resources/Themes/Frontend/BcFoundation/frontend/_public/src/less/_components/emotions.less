@@ -151,10 +151,14 @@ body.emotion--preview {
 	&:extend(.display-block);
     margin: 0 auto;
 	.unitize(max-width, 1260);
+	.unitize(padding-left, 15);
+	.unitize(padding-right, 15);
     overflow: hidden;
 
     &.is--fullscreen {
         max-width: none;
+		padding-left: 0;
+		padding-right: 0;
     }
 }
 
