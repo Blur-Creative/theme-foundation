@@ -37,11 +37,12 @@ SHOPWARE_EOD;
      *
      * @var array
      */
-    private $themeColorDefaults = [
-		// base colors
-		'brand-primary' => '#ff5a5f',
+    public $themeColorDefaults = [
+		// Brand colors
+		'brand-primary' => '#d30046',
 		'brand-primary-light' => 'screen(@brand-primary, @shade-800);',
 		'brand-secondary' => '#00ad8e',
+		'brand-secondary-dark' => 'darken(@brand-secondary, 15%)',
 		'brand-success' => '@highlight-success',
 		'brand-info' => '@highlight-info',
 		'brand-warning' => '@highlight-notice',
@@ -59,37 +60,95 @@ SHOPWARE_EOD;
 		'highlight-error' => '#dc3545',
 		'highlight-notice' => '#ffc107',
 		'highlight-info' => '#156beb',
+		// Scaffolding
+		'body-bg' => '#ffffff',
+		'text-color-dark' => 'multiply(@text-color, @shade-300)',
+		'link-color' => '@brand-primary',
+		'link-hover-color' => 'darken(@link-color, 10%)',
+		'rating-star-color' => '@highlight-notice',
+		'overlay-bg' => '#000000',
+		'overlay-opacity' => '0.7',
 		// typography
+		'font-base-stack' => '"Raleway", sans-serif',
+		'font-headline-stack' => '@font-base-stack',
+		'font-size-base' => '14',
 		'font-light-weight' => '300',
 		'font-base-weight' => '400',
 		'font-medium-weight' => '600',
 		'font-bold-weight' => '800',
+		'font-size-h1' => '40', // 2.5rem
+		'font-size-h2' => '32', // 2rem
+		'font-size-h3' => '26', // 1.6rem
+		'font-size-h4' => '20', // 1.2rem
+		'font-size-h5' => '16', // 1rem
+		'font-size-h6' => '13', // 0.8rem
 		// buttons
+		'btn-font-size' => '14',
+		'btn-icon-size' => '10',
 		'btn-default-top-bg' => 'rgba(255,255,255,0.1)',
 		'btn-default-bottom-bg' => 'rgba(255,255,255,0)',
 		'btn-default-hover-bg' => '@gray-light',
 		'btn-default-text-color' => '@brand-dark',
+		'btn-default-border-color' => '@border-color',
 		'btn-default-hover-text-color' => '@btn-default-text-color',
 		'btn-default-hover-border-color' => '@btn-default-border-color',
 		'btn-primary-top-bg' => '@btn-default-top-bg',
 		'btn-primary-bottom-bg' => '@btn-default-bottom-bg',
         'btn-primary-hover-bg' => '@brand-primary-light',
+        'btn-primary-text-color' => '#FFFFFF',
+        'btn-primary-hover-text-color' => '@btn-primary-text-color',
 		'btn-secondary-top-bg' => '@btn-default-top-bg',
 		'btn-secondary-bottom-bg' => '@btn-default-bottom-bg',
 		'btn-secondary-hover-bg' => '@brand-secondary-light',
-		// text colors
+		'btn-secondary-text-color' => '#FFFFFF',
+		'btn-secondary-hover-text-color' => '@btn-secondary-text-color',
+		// Panels
+		'panel-header-bg' => '@gray-light',
+		'panel-header-font-size' => '14',
+		'panel-header-color' => '@text-color',
+		'panel-border' => '@border-color',
+		'panel-bg' => '#FFFFFF',
+		// scaffolding colors
 		'text-color' => '@brand-dark',
 		'text-muted' => '#aaaaaa',
 		'button-link-color' => '@brand-dark',
 		// forms
+		'label-font-size' => '14',
+		'label-color' => '@text-color',
 		'input-bg' => '#ffffff',
 		'input-color' => '@text-color',
 		'input-font-size' => '14',
 		'input-focus-color' => '@text-color',
+		'input-focus-border' => '@brand-primary',
+		'input-focus-bg' => '#FFFFFF',
 		'input-placeholder-color' => '@gray-dark',
-		// Offcanvas color settings
+		'input-border' => '@border-color',
+		'input-error-bg' => 'desaturate(lighten(@highlight-error, 38%), 20%)',
+		'input-error-border' => '@highlight-error',
+		'input-error-color' => '@highlight-error',
+		'input-success-bg' => '#FFFFFF',
+		'input-success-border' => '@highlight-success',
+		'input-success-color' => '@brand-secondary-dark',
+		// Tables
+        'panel-table-header-bg' => '@panel-bg',
+        'panel-table-header-color' => '@text-color-dark',
+        'table-row-bg' => '#FFFFFF',
+        'table-row-color' => '@brand-secondary',
+        'table-row-highlight-bg' => 'darken(@table-row-bg, 4%)',
+        'table-header-bg' => '@brand-secondary',
+        'table-header-color' => '#FFFFFF',
+		// Product Badges
+        'badge-discount-bg' => '@highlight-error',
+        'badge-discount-color' => '#FFFFFF',
+        'badge-newcomer-bg' => '@highlight-notice',
+        'badge-newcomer-color' => '#FFFFFF',
+        'badge-recommendation-bg' => '@highlight-success',
+        'badge-recommendation-color' => '#FFFFFF',
+        'badge-download-bg' => '@highlight-info',
+        'badge-download-color' => '#FFFFFF',		
+		// Offcanvas Colors
 		'offcanvas-bg-color' => '#ffffff',
-		'offcanvas-navigation-headline-bg-color' => '@gray-light',
+		'offcanvas-navigation-headline-bg-color' => '@gray-light',		
 		// Breadcrumb color settings
 		'breadcrumb-bg-color' => '#f6f6f6',
 		'breadcrumb-text-color' => '@brand-dark',
@@ -98,7 +157,7 @@ SHOPWARE_EOD;
 		'image-background-color' => '#ffffff',
 		'manufacturer-background-color' => '#ffffff',
 		// Sliders Color Settings
-		'slider-arrow-bg-color' => '@gray-light',
+		'slider-arrow-bg-color' => '@gray-light',		
 		'slider-arrow-icon-color' => '@btn-default-text-color',
 		// Forms
 		'select-field-arrow-color' => '@gray-dark',
@@ -114,13 +173,74 @@ SHOPWARE_EOD;
 		// Dropdown Menu
 		'dropdown-menu-bg-color' => '#ffffff',
 		'dropdown-link-hover-bg-color' => '@gray-light',
+		// Sold out Overlay
+		'soldout-overlay-color' => '#ffffff',
+		'soldout-overlay-opacity' => '50%',
+		'soldout-badge-bg-color' => '@brand-light',
+		'soldout-badge-text-color' => '@brand-dark',
+        // header colors
+        'header-bg' => '#ffffff',
+        'topbar-bg' => '#ffffff',
+        'header-color' => '@brand-dark',
+        'topbar-color' => '#777777',
+		'advanced-menu-bg-color' => '#ffffff',
+		// footer colors
+		'footer-bg' => '#ffffff',
+		'footer-text-color' => '@text-color',
+		'footer-newsletter-bg' => '@gray-light',
+		'footer-newsletter-text-color' => '@text-color',
+		// USP Bar
+		'usp-bar-bg-color' => '@brand-dark',
+		'usp-bar-text-color' => '@brand-light',
+		'usp-bar-icon-size' => '24',
+		// payment shipping color
+		'payment-shipping-bg-color' => '@brand-primary',
+		'payment-shipping-text-color' => '@text-white',
+		// Privacy Styles
+		'cookie-permission-notice-bg-color' => '@brand-dark',
+		'cookie-permission-notice-text-color' => '@text-white'
 	];
-	
-	private $themeConfigDefaults = [
+
+
+    private $themeConfigDefaults = [
+		//Logos
 		'mobileLogo' => 'frontend/_public/src/img/logos/logo--mobile.png',
 		'tabletLogo' => 'frontend/_public/src/img/logos/logo--tablet.png',
 		'tabletLandscapeLogo' => 'frontend/_public/src/img/logos/logo--tablet.png',
 		'desktopLogo' => 'frontend/_public/src/img/logos/logo--tablet.png',
+		// Scroll to Top
+		'scroll-to-top-size' => '45',
+		'scroll-to-top-icon-size' => '14',
+		'scroll-to-top-icon-color' => '#ffffff',
+		'scroll-to-top-bg-color' => '@brand-primary',
+		'scroll-to-top-position-bottom' => '30',
+		'scroll-to-top-position-right' => '30',
+		'scroll-to-top-radius' => '@border-radius-base',
+		'scroll-to-top-shadow' => '0 0 0.75rem rgba(0,0,0,.5)',
+		// Header Generell Settings
+		'header_divider' => 'shadow',
+		'topbar_divider' => 'border',
+		'main_navigation_alignment' => 'center',
+		// Header Logo Width
+		'header_logo_width_xs' => '100',
+		'header_logo_width_sm' => '130',
+		'header_logo_width_md' => '130',
+		'header_logo_width_lg' => '150',
+		'header_logo_width_xl' => '150',
+        // Header Special Notice
+        'header_special_notice_active' => true,
+        'special_notice_text' => '__special_notice_text_sample__',
+		// Checkout header
+		'checkout_header_back_button_appearance' => 'dark',
+		// Listing
+		'product_box_button_buy_appearance' => 'success',
+		'product_box_button_detail_appearance' => 'dark',
+		// Detail
+		'detail_button_buy_appearance' => 'success',
+		'detail_button_product_navigation_appearance' => 'light',
+		// USP Bar
+		'usp_bar_header_active' => false,
+		'usp_bar_footer_active' => false
 	];
 
     /**
@@ -2044,8 +2164,8 @@ SHOPWARE_EOD;
     public function createConfigSets(ArrayCollection $collection)
     {
         $set = new ConfigSet();
-        $set->setName('__bc_foundation_color_scheme_turquoise__')->setDescription(
-            '__bc_foundation_color_scheme_turquoise__'
+        $set->setName('__bc_foundation_default_color_template__')->setDescription(
+            '__bc_foundation_default_color_template__'
         )->setValues($this->themeColorDefaults);
         $collection->add($set);
 	}
