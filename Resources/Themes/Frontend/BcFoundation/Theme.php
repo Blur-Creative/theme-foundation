@@ -931,42 +931,42 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'font-base-stack',
                 '@font-base-stack',
-                $this->themeFontDefaults['font-base-stack']
+                $this->themeColorDefaults['font-base-stack']
             )
         );
         $fieldSetBasic->addElement(
             $this->createTextField(
                 'font-headline-stack',
                 '@font-headline-stack',
-                $this->themeFontDefaults['font-headline-stack']
+                $this->themeColorDefaults['font-headline-stack']
             )
         );
         $fieldSetBasic->addElement(
             $this->createTextField(
                 'font-size-base',
                 '@font-size-base',
-                $this->themeFontDefaults['font-size-base']
+                $this->themeColorDefaults['font-size-base']
             )
         );
         $fieldSetBasic->addElement(
             $this->createTextField(
                 'font-base-weight',
                 '@font-base-weight',
-                $this->themeFontDefaults['font-base-weight']
+                $this->themeColorDefaults['font-base-weight']
             )
         );
         $fieldSetBasic->addElement(
             $this->createTextField(
                 'font-light-weight',
                 '@font-light-weight',
-                $this->themeFontDefaults['font-light-weight']
+                $this->themeColorDefaults['font-light-weight']
             )
         );
         $fieldSetBasic->addElement(
             $this->createTextField(
                 'font-bold-weight',
                 '@font-bold-weight',
-                $this->themeFontDefaults['font-bold-weight']
+                $this->themeColorDefaults['font-bold-weight']
             )
         );
 
@@ -983,42 +983,42 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'font-size-h1',
                 '@font-size-h1',
-                $this->themeFontDefaults['font-size-h1']
+                $this->themeColorDefaults['font-size-h1']
             )
         );
         $fieldSetHeadlines->addElement(
             $this->createTextField(
                 'font-size-h2',
                 '@font-size-h2',
-                $this->themeFontDefaults['font-size-h2']
+                $this->themeColorDefaults['font-size-h2']
             )
         );
         $fieldSetHeadlines->addElement(
             $this->createTextField(
                 'font-size-h3',
                 '@font-size-h3',
-                $this->themeFontDefaults['font-size-h3']
+                $this->themeColorDefaults['font-size-h3']
             )
         );
         $fieldSetHeadlines->addElement(
             $this->createTextField(
                 'font-size-h4',
                 '@font-size-h4',
-                $this->themeFontDefaults['font-size-h4']
+                $this->themeColorDefaults['font-size-h4']
             )
         );
         $fieldSetHeadlines->addElement(
             $this->createTextField(
                 'font-size-h5',
                 '@font-size-h5',
-                $this->themeFontDefaults['font-size-h5']
+                $this->themeColorDefaults['font-size-h5']
             )
         );
         $fieldSetHeadlines->addElement(
             $this->createTextField(
                 'font-size-h6',
                 '@font-size-h6',
-                $this->themeFontDefaults['font-size-h6']
+                $this->themeColorDefaults['font-size-h6']
             )
         );
 
@@ -1056,14 +1056,14 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'btn-font-size',
                 '@btn-font-size',
-                $this->themeFontDefaults['btn-font-size']
+                $this->themeColorDefaults['btn-font-size']
             )
         );
         $fieldSetButtons->addElement(
             $this->createTextField(
                 'btn-icon-size',
                 '@btn-icon-size',
-                $this->themeFontDefaults['btn-icon-size']
+                $this->themeColorDefaults['btn-icon-size']
             )
         );
 
@@ -1236,7 +1236,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'panel-header-font-size',
                 '@panel-header-font-size',
-                $this->themeFontDefaults['panel-header-font-size']
+                $this->themeColorDefaults['panel-header-font-size']
             )
         );
         $fieldSetPanels->addElement(
@@ -1296,7 +1296,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'label-font-size',
                 '@label-font-size',
-                $this->themeFontDefaults['label-font-size']
+                $this->themeColorDefaults['label-font-size']
             )
         );
         $fieldSetLabels->addElement(
@@ -1320,7 +1320,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'input-font-size',
                 '@input-font-size',
-                $this->themeFontDefaults['input-font-size']
+                $this->themeColorDefaults['input-font-size']
             )
         );
         $fieldSetFormBase->addElement(
