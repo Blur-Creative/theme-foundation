@@ -37,7 +37,7 @@ SHOPWARE_EOD;
      *
      * @var array
      */
-    public $themeColorDefaults = [
+    private $themeColorDefaults = [
 		// Brand colors
 		'brand-primary' => '#d30046',
 		'brand-primary-light' => 'screen(@brand-primary, @shade-800);',
