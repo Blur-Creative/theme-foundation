@@ -13,7 +13,7 @@
         init: function () {
             var me = this;
 
-            me._on(me.$el, 'touchstart click', $.proxy(me.onClickMenu, me));
+            me._on(me.$el, 'click', $.proxy(me.onClickMenu, me));
 
             $.publish('plugin/swDropdownMenu/onRegisterEvents', [ me ]);
         },
@@ -28,12 +28,50 @@
 				event.stopPropagation();
                 return;
             }
+			
+			//console.log( me.$el.hasClass(me.opts.activeCls) );
+			
+			if( me.$el.hasClass(me.opts.activeCls) ) {
+				//console.log( 'boing' );
+				me.$el.removeClass(me.opts.activeCls);
+				return;
+			}
+			
+			
+			
+			
+			$( '*[data-drop-down-menu="true"]' ).removeClass( me.opts.activeCls );
+			
+			me.$el.toggleClass(me.opts.activeCls);
+			
+			event.stopPropagation();
+			
 
+			
+			
+			
+			/*
+			if ( me.$el.hasClass( me.opts.activeCls ) ) {
+				
+				event.preventDefault();
+				event.stopPropagation();
+				return;
+			}
+			*/
+
+
+			/*
             if (me.opts.preventDefault) {
                 event.preventDefault();
             }
+            */
+            
+			
+			
+			
 
-            me.$el.toggleClass(me.opts.activeCls);
+            
+			//console.log( me.$el.hasClass(me.opts.activeCls) );
 
             if (me.opts.closeOnBody) {
                 event.stopPropagation();
@@ -51,8 +89,6 @@
 				event.stopPropagation();
                 return;
             }
-
-            event.preventDefault();
 
             $('body').off(me.getEventName('touchstart click'));
 
