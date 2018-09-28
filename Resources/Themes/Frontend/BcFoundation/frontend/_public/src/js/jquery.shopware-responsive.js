@@ -117,8 +117,44 @@
             offset = me.scrollBarOffset = Math.min(Math.abs($list[0].scrollHeight - $list.height()) * -1, me.scrollBarOffset);
 
             $.publish('plugin/swMenuScroller/onUpdateScrollBarOffset', [ me, offset ]);
-        }
+        },
+        updateButtons: function () {
+            var me = this,
+                $list = me.$list,
+                elWidth = me.$el.width(),
+                listWidth = $list.prop('scrollWidth'),
+                scrollLeft = $list.scrollLeft();
+				
+			var items_width = 0;
+			
+			me.$el.find( '.js--menu-scroller--item' ).each(function() {
+				var $this = $(this);
+				items_width += $this.outerWidth();
+			});
+				
+			
+			if ( elWidth > items_width ) {
+				me.$rightArrow.addClass( 'is--hidden' );
+				me.$leftArrow.addClass( 'is--hidden' );
+			} else {
+				if( scrollLeft == 0) {
+					me.$leftArrow.addClass( 'is--hidden' );
+				}
+				if( scrollLeft > 0) {
+					me.$leftArrow.removeClass( 'is--hidden' );
+				}
+				if( scrollLeft >= ( items_width - elWidth ) ) {
+					me.$rightArrow.addClass( 'is--hidden' );
+				}
+				if( scrollLeft < ( items_width - elWidth ) ) {
+					me.$rightArrow.removeClass( 'is--hidden' );
+				}
+			}
+
+            $.publish('plugin/swMenuScroller/onUpdateButtons', [ me, me.$leftArrow, me.$rightArrow ]);
+        },
 	});
+	
 	
 	/*
 	 * Override 'createArrows' in swImageSlider Plugin

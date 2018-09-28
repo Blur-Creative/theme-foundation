@@ -15,6 +15,10 @@
         .unitize(height, 32);
 		border-radius: 50%;
         background-color: @gray-light;
+		
+		&.is--hidden {
+			&:extend(.display-none);
+		}
         
         .arrow--content {
             &:extend([class*=" icon--"]);
