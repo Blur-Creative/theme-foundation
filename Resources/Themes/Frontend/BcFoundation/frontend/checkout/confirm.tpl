@@ -23,7 +23,7 @@
 {* Content top container *}
 {block name="frontend_index_content_top"}
 	{$smarty.block.parent}
-	
+
 	{block name="frontend_index_content_step_box_include"}
 		{if !$toAccount}
 			{include file="frontend/register/steps.tpl" sStepActive="finished"}
@@ -34,7 +34,7 @@
 {* Terms of service *}
 {block name='frontend_checkout_confirm_agb'}
 	<li class="block-group row--tos">
-		
+
 		<div class="terms-of-service--confirm{if !{config name='IgnoreAGB'}} custom-control custom-checkbox{/if}">
 			{* Terms of service checkbox *}
 			{block name='frontend_checkout_confirm_agb_checkbox'}
@@ -47,7 +47,7 @@
 						   name="sAGB"{if $sAGBChecked} checked="checked"{/if} />
 				{/if}
 			{/block}
-			
+
 			{* AGB label *}
 			{block name='frontend_checkout_confirm_agb_label'}
 				<label for="sAGB" class="custom-control-label{if $sAGBError} has--error{/if}" data-modalbox="true" data-targetSelector="a" data-mode="ajax" data-height="500" data-width="750">
@@ -55,7 +55,7 @@
 				</label>
 			{/block}
 		</div>
-		
+
 	</li>
 {/block}
 
@@ -173,7 +173,7 @@
 	<div class="payment--method-info">
 		<label class="payment--title">{s name="ConfirmInfoPaymentMethod" namespace="frontend/checkout/confirm"}{/s}</label>
 		<div class="payment--description">{$sUserData.additional.payment.description}</div>
-		
+
 		{if $sUserData.additional.payment.additionaldescription}
 			<div class="payment--additional-description">
 				{$sUserData.additional.payment.additionaldescription}
@@ -190,14 +190,13 @@
 	<div class="shipping--method-info">
 		<label class="shipping--title">{s name="ConfirmHeadDispatch"}{/s}</label>
 		<div class="shipping--description" title="{$sDispatch.name}">{$sDispatch.name|truncate:25:"...":true}</div>
-	
+
 		{if $sDispatch.description}
 			<div class="shipping--additional-description">
 				{$sDispatch.description}
 			</div>
 		{/if}
 	</div>
-	{debug}
 {/block}
 
 {block name='frontend_checkout_confirm_left_payment_method_actions'}
