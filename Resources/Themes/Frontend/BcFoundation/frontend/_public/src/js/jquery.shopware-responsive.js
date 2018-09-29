@@ -27,7 +27,8 @@
 		.removePlugin('.navigation--entry.entry--account.with-slt', 'swDropdownMenu', [ 'm', 'l', 'xl' ])
 		
 		// Update Dropdown Menu
-		.updatePlugin('*[data-drop-down-menu="true"]', 'swDropdownMenu')
+		.removePlugin('*[data-drop-down-menu="true"]', 'swDropdownMenu')
+		.addPlugin('*[data-drop-down-menu="true"]', 'bcDropdownMenu', [ 'xs', 's', 'm', 'l', 'xl'])
 		
 		.addPlugin('div[data-register="true"]', 'swRegister', {
 			paymentInputSelector: '.payment--selection-input'

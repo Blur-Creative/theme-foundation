@@ -1,7 +1,7 @@
 ;(function($) {
     'use strict';
 
-    $.plugin('swDropdownMenu', {
+    $.plugin('bcDropdownMenu', {
 
         defaults: {
             activeCls: 'js--is--dropdown-active',
@@ -13,12 +13,13 @@
         init: function () {
             var me = this;
 
-            me._on(me.$el, 'click', $.proxy(me.onClickMenu, me));
+            me._on(me.$el, 'click', $.proxy(me.onClickTrigger, me));
 
-            $.publish('plugin/swDropdownMenu/onRegisterEvents', [ me ]);
+			
+            $.publish('plugin/bcDropdownMenu/onInitEvents', [ me ]);
         },
 
-        onClickMenu: function (event) {
+        onClickTrigger: function (event) {
             var me = this,
                 dropdown = me.opts.dropdownCls;
 
@@ -27,58 +28,27 @@
             if ($(event.target).parents(dropdown).is(dropdown)) {
 				event.stopPropagation();
                 return;
-            }
+			}	
 			
-			//console.log( me.$el.hasClass(me.opts.activeCls) );
-			
-			if( me.$el.hasClass(me.opts.activeCls) ) {
-				//console.log( 'boing' );
+			if ( me.$el.hasClass(me.opts.activeCls) ) {
 				me.$el.removeClass(me.opts.activeCls);
-				return;
-			}
-			
-			
-			
-			
-			$( '*[data-drop-down-menu="true"]' ).removeClass( me.opts.activeCls );
-			
-			me.$el.toggleClass(me.opts.activeCls);
-			
-			event.stopPropagation();
-			
-
-			
-			
-			
-			/*
-			if ( me.$el.hasClass( me.opts.activeCls ) ) {
 				
-				event.preventDefault();
-				event.stopPropagation();
-				return;
+				return false;
 			}
-			*/
-
-
-			/*
-            if (me.opts.preventDefault) {
-                event.preventDefault();
-            }
-            */
-            
 			
+			if ( !me.$el.hasClass(me.opts.activeCls) ) {
+				$( '*[data-drop-down-menu="true"]' ).removeClass( me.opts.activeCls );
+				me.$el.addClass(me.opts.activeCls);
+				
+				if (me.opts.closeOnBody) {
+					event.stopPropagation();
+					$('body').on(me.getEventName('click'), $.proxy(me.onClickBody, me));
+				}
+
+				return false;
+			}
 			
-			
-
-            
-			//console.log( me.$el.hasClass(me.opts.activeCls) );
-
-            if (me.opts.closeOnBody) {
-                event.stopPropagation();
-                $('body').on(me.getEventName('touchstart click'), $.proxy(me.onClickBody, me));
-            }
-
-            $.publish('plugin/swDropdownMenu/onClickMenu', [ me, event ]);
+			$.publish('plugin/bcDropdownMenu/onClickTrigger', [ me ]);
         },
 
         onClickBody: function(event) {
@@ -90,11 +60,11 @@
                 return;
             }
 
-            $('body').off(me.getEventName('touchstart click'));
+            $('body').off(me.getEventName('click'));
 
             me.$el.removeClass(me.opts.activeCls);
 
-            $.publish('plugin/swDropdownMenu/onClickBody', [ me, event ]);
+			$.publish('plugin/bcDropdownMenu/onClickBody', [ me ]);
         },
 
         destroy: function () {
