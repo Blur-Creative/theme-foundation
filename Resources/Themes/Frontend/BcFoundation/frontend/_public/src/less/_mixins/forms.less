@@ -4,22 +4,26 @@
 	appearance:         none;	
 }
 
-.form-placeholder(@color: @input-placeholder-color, @size: @input-font-size) {
+.form-placeholder(@color: @input-placeholder-color, @size: @input-font-size, @weight: @font-base-weight) {
 	&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 		.unitize(font-size, @size);
 		color: @color;
+		font-weight: @weight;
 	}
 	&::-moz-placeholder { /* Firefox 19+ */
 		.unitize(font-size, @size);
 		color: @color;
+		font-weight: @weight;
 	}
 	&:-ms-input-placeholder { /* IE 10+ */
 		.unitize(font-size, @size);
 		color: @color;
+		font-weight: @weight;
 	}
 	&:-moz-placeholder { /* Firefox 18- */
 		.unitize(font-size, @size);
 		color: @color;
+		font-weight: @weight;
 	}	
 }
 
