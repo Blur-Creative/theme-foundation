@@ -292,9 +292,13 @@ SHOPWARE_EOD;
      */
     private $fieldSetDefaults = [
         'layout' => 'column',
-        'height' => 170,
+        'autoScroll' => true,
         'flex' => 0,
-        'defaults' => ['columnWidth' => 0.5, 'labelWidth' => 180, 'margin' => '3 16 3 0'],
+        'defaults' => [
+			'columnWidth' => 0.5,
+			'labelWidth' => 180,
+			'margin' => '3 16 3 0'
+		],
     ];
 
 	/**
@@ -917,10 +921,16 @@ SHOPWARE_EOD;
         $tab = $this->createTab(
             'typo_tab',
             '__responsive_tab_typo__',
-            ['attributes' => ['autoScroll' => true]]
+            ['attributes' =>
+				[
+					'layout' => 'anchor',
+					'flex' => 1,
+					'autoScroll' => true
+				]
+			]
         );
 
-        $attributes = array_merge($this->fieldSetDefaults, ['height' => 170]);
+        $attributes = array_merge($this->fieldSetDefaults);
         $fieldSetBasic = $this->createFieldSet(
             'typo_base',
             '__responsive_tab_typo_fieldset_base__',
@@ -939,6 +949,20 @@ SHOPWARE_EOD;
                 'font-headline-stack',
                 '@font-headline-stack',
                 $this->themeColorDefaults['font-headline-stack']
+            )
+        );
+        $fieldSetBasic->addElement(
+            $this->createTextField(
+                'google_fonts_tag',
+                '__google_fonts_tag__',
+                '',
+                ['attributes' =>
+                    [
+                        'lessCompatible' => false,
+						'columnWidth' => 1,
+						'supportText' => '__google_fonts_tag_supporttext__'
+                    ]
+                ]
             )
         );
         $fieldSetBasic->addElement(
@@ -972,7 +996,7 @@ SHOPWARE_EOD;
 
         $tab->addElement($fieldSetBasic);
 
-        $attributes = array_merge($this->fieldSetDefaults, ['height' => 170]);
+        $attributes = array_merge($this->fieldSetDefaults);
         $fieldSetHeadlines = $this->createFieldSet(
             'typo_headlines',
             '__responsive_tab_typo_fieldset_headlines__',
