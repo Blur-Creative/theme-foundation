@@ -138,13 +138,13 @@ SHOPWARE_EOD;
         'table-header-bg' => '@brand-secondary',
         'table-header-color' => '#FFFFFF',
 		// Product Badges
-        'badge-discount-bg' => '@highlight-error',
+        'badge-discount-bg' => '@brand-danger',
         'badge-discount-color' => '#FFFFFF',
-        'badge-newcomer-bg' => '@highlight-notice',
+        'badge-newcomer-bg' => '@brand-success',
         'badge-newcomer-color' => '#FFFFFF',
-        'badge-recommendation-bg' => '@highlight-success',
+        'badge-recommendation-bg' => '@brand-dark',
         'badge-recommendation-color' => '#FFFFFF',
-        'badge-download-bg' => '@highlight-info',
+        'badge-download-bg' => '@brand-info',
         'badge-download-color' => '#FFFFFF',		
 		// Offcanvas Colors
 		'offcanvas-bg-color' => '#ffffff',

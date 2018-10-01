@@ -4,31 +4,38 @@
 	&:extend(.align-items-start);
 	&:extend(.justify-content-start);
     width: 100%;
-	
+
 	.product--badge {
 		&:extend(.font-weight-medium);
 		.unitize(font-size, 12);
 		.unitize-padding(5, 10);
 		line-height: @line-height-base;
-		
+
 		&.badge--esd {
-			background-color: @brand-info;
-			color: @brand-light;
+			background-color: @badge-download-bg;
+			color: @badge-download-color;
 		}
-		
+
 		&.badge--discount {
-			background-color: @brand-danger;
-			color: @brand-light;
+			background-color: @badge-discount-bg;
+			color: @badge-discount-color;
 		}
-		
+
 		&.badge--newcomer {
-			background-color: @brand-success;
-			color: @brand-light;
+			background-color: @badge-newcomer-bg;
+			color: @badge-newcomer-color;
+		}
+
+		&.badge--recommend {
+			background-color: @badge-recommendation-bg;
+			color: @badge-recommendation-color;
 		}
 		
-		&.badge--recommend {
-			background-color: @brand-dark;
-			color: @brand-light;
+		i {
+		
+			+ * {
+				.unitize(margin-left, 10);
+			}
 		}
 	}
 }
