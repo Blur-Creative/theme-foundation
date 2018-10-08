@@ -9,26 +9,31 @@
 }
 
 .flexbox-direction(@direction) {
+    -ms-flex-direction: @direction;
     -webkit-flex-direction: @direction;
     flex-direction: @direction;	
 }
 
 .flexbox-justify(@justify) {
+    -ms-flex-pack: @justify;
     -webkit-justify-content: @justify;
     justify-content: @justify;
 }
 
 .flexbox-align(@align) {
+    -ms-flex-align: @align;
     -webkit-align-items: @align;
     align-items: @align;
 }
 
 .flexbox-align-self(@align) {
+	-ms-flex-item-align:@align;
 	-webkit-align-self:@align;
 	align-self:@align;
 }
 
 .flexbox-wrap(@wrap) {
+    -ms-flex-wrap: @wrap;
     -webkit-flex-wrap: @wrap;
     flex-wrap: @wrap;
 }
@@ -40,10 +45,20 @@
 	.flexbox-item-margin(@itemCenter);
 }
 
+.flexbox-item-order(@order) {
+	-webkit-box-ordinal-group: @order;
+	-moz-box-ordinal-group: @order;
+	-ms-flex-order: @order; 
+	-webkit-order: @order; 
+	order: @order;
+}
+
 .flexbox-item-flex(@flex) when not (@flex = none){
-	-webkit-flex:@flex;
-	-ms-flex:@flex;
-	flex:@flex;
+	-webkit-box-flex: @flex;
+	-moz-box-flex: @flex; 
+	-webkit-flex: @flex;
+	-ms-flex: @flex;
+	flex: @flex;
 }
 
 .flexbox-item-margin(@itemCenter) when (@itemCenter = true) {
