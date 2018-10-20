@@ -212,6 +212,58 @@
 	</div>
 {/block}
 
+{* Additional feature - Add voucher *}
+{block name="frontend_checkout_confirm_additional_features_add_voucher"}
+	<div class="feature--group block">
+		<div class="feature--voucher">
+			<form method="post" action="{url action='addVoucher' sTargetAction=$sTargetAction}" class="table--add-voucher add-voucher--form">
+				{block name='frontend_checkout_table_footer_left_add_voucher_agb'}
+					{if !{config name='IgnoreAGB'}}
+						<input type="hidden" class="agb-checkbox" name="sAGB"
+							   value="{if $sAGBChecked}1{else}0{/if}"/>
+					{/if}
+				{/block}
+
+				<div class="input-group">
+					{block name='frontend_checkout_confirm_add_voucher_field'}
+						<input type="text" class="form-control add-voucher--field block" name="sVoucher" placeholder="{"{s name='CheckoutFooterAddVoucherLabelInline' namespace='frontend/checkout/cart_footer'}{/s}"|escape}" />
+					{/block}
+	
+					{block name='frontend_checkout_confirm_add_voucher_button'}
+						<div class="input-group-append">
+							<button type="submit" class="add-voucher--button btn is--secondary">
+								<i class="icon--check"></i>
+							</button>
+						</div>
+					{/block}
+				</div>
+			</form>
+		</div>
+
+
+		{* Additional feature - Add product using the sku *}
+		{block name="frontend_checkout_confirm_additional_features_add_product"}
+			<div class="feature--add-product">
+				<form method="post" action="{url action='addArticle' sTargetAction=$sTargetAction}" class="add-product--form block-group">
+					<div class="input-group">
+						{block name='frontend_checkout_confirm_add_product_field'}
+							<input name="sAdd" class="form-control add-product--field block" type="text" placeholder="{s name='CheckoutFooterAddProductPlaceholder' namespace='frontend/checkout/cart_footer_left'}{/s}" />
+						{/block}
+	
+						{block name='frontend_checkout_confirm_add_product_button'}
+							<div class="input-group-append">
+								<button type="submit" class="add-product--button btn is--secondary">
+									<i class="icon--check"></i>
+								</button>
+							</div>
+						{/block}
+					</div>
+				</form>
+			</div>
+		{/block}
+	</div>
+{/block}
+
 {block name="frontend_checkout_confirm_product_table_content"}
 	<div class="panel products--overview has--border">
 		<div class="panel--table">
