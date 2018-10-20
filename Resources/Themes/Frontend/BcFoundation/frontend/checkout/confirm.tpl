@@ -59,44 +59,85 @@
 	</li>
 {/block}
 
+{block name='frontend_checkout_confirm_information_addresses_equal_panel_shipping_select_address'}
+	<a href="{url controller=address}"
+	   class="btn is--info is--center choose-different-address"
+	   data-address-selection="true"
+	   data-sessionKey="checkoutShippingAddressId"
+	   data-id="{$activeShippingAddressId}"
+	   title="{s name="ConfirmAddressChooseDifferentShippingAddress"}{/s}">
+		{s name="ConfirmAddressChooseDifferentShippingAddress"}{/s}
+	</a>
+{/block}
+
 {block name='frontend_checkout_confirm_information_addresses_equal_panel_actions'}
 	<div class="panel--actions panel--footer">
-		{block name="frontend_checkout_confirm_information_addresses_equal_panel_actions_change"}
-			<div class="address--actions-change">
+		<ul class="nav confirm--panel-nav equal--address-nav">
+			{block name="frontend_checkout_confirm_information_addresses_equal_panel_actions_change"}
+				
 				{block name='frontend_checkout_confirm_information_addresses_equal_panel_shipping_change_address'}
-					<a href="{url controller=address action=edit id=$activeBillingAddressId sTarget=checkout sTargetAction=confirm}"
-					   data-address-editor="true"
-					   data-id="{$activeBillingAddressId}"
-					   data-sessionKey="checkoutBillingAddressId,checkoutShippingAddressId"
-					   data-title="{s name="ConfirmAddressSelectButton"}Change address{/s}"
-					   title="{s name="ConfirmAddressSelectButton"}Change address{/s}"
-					   class="btn">
-						{s name="ConfirmAddressSelectButton"}Change address{/s}
-					</a>
+					<li class="nav-item confirm--panel-nav-item address--actions-change">
+						<a href="{url controller=address action=edit id=$activeBillingAddressId sTarget=checkout sTargetAction=confirm}"
+						   data-address-editor="true"
+						   data-id="{$activeBillingAddressId}"
+						   data-sessionKey="checkoutBillingAddressId,checkoutShippingAddressId"
+						   data-title="{s name="ConfirmAddressSelectButton"}Change address{/s}"
+						   title="{s name="ConfirmAddressSelectButton"}Change address{/s}"
+						   class="btn is--secondary is--center btn--choose-different-address">
+							{s name="ConfirmAddressSelectButton"}Change address{/s}
+						</a>
+					</li>
 				{/block}
-
+	
 				{block name='frontend_checkout_confirm_information_addresses_equal_panel_shipping_add_address'}
-					<a href="{url controller=address}"
-					   class="btn choose-different-address"
-					   data-address-selection="true"
-					   data-sessionKey="checkoutShippingAddressId"
-					   data-id="{$activeShippingAddressId}"
-					   title="{s name="ConfirmAddressChooseDifferentShippingAddress"}{/s}">
-						{s name="ConfirmAddressChooseDifferentShippingAddress"}{/s}
-					</a>
+					{* seems duplicate
+						<li class="nav-item confirm--panel-nav-item address--actions-add--shipping">
+							<a href="{url controller=address}"
+							   class="btn is--secondary is--center btn--add-different-address"
+							   data-address-selection="true"
+							   data-sessionKey="checkoutShippingAddressId"
+							   data-id="{$activeShippingAddressId}"
+							   title="{s name="ConfirmAddressChooseDifferentShippingAddress"}{/s}">
+								{s name="ConfirmAddressChooseDifferentShippingAddress"}{/s}
+							</a>
+						</li>
+					*}
 				{/block}
-			</div>
-		{/block}
-		{block name="frontend_checkout_confirm_information_addresses_equal_panel_actions_select_address"}
-			<a href="{url controller=address}"
-			   title="{s name="ConfirmAddressSelectLink"}{/s}"
-			   data-address-selection="true"
-			   data-sessionKey="checkoutBillingAddressId,checkoutShippingAddressId"
-			   data-id="{$activeBillingAddressId}">
-				{s name="ConfirmAddressSelectLink"}{/s}
-			</a>
-		{/block}
+				
+			{/block}
+			
+			{block name="frontend_checkout_confirm_information_addresses_equal_panel_actions_select_address"}
+				{* seems duplicate
+					<li class="nav-item confirm--panel-nav-item">
+						<a href="{url controller=address}"
+						   title="{s name="ConfirmAddressSelectLink"}{/s}"
+						   data-address-selection="true"
+						   data-sessionKey="checkoutBillingAddressId,checkoutShippingAddressId"
+						   data-id="{$activeBillingAddressId}"
+						   class="btn is--link is--center btn--select-address">
+							{s name="ConfirmAddressSelectLink"}{/s}
+						</a>
+					</li>
+				*}
+			{/block}
+		</ul>
 	</div>
+{/block}
+
+{block name="frontend_checkout_confirm_information_addresses_shipping_panel_body_set_as_default"}
+	{if $activeShippingAddressId != $sUserData.additional.user.default_shipping_address_id}
+		<div class="custom-control custom-checkbox set-default">
+			<input type="checkbox"
+				   name="setAsDefaultShippingAddress"
+				   id="set_as_default_shipping"
+				   class="custom-control-input"
+				   value="1" />
+			
+			<label for="set_as_default_shipping" class="custom-control-label">
+				{s name="ConfirmUseForFutureOrders"}{/s}
+			</label>
+		</div>
+	{/if}
 {/block}
 
 {* Action buttons *}
