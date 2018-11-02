@@ -76,7 +76,7 @@ SHOPWARE_EOD;
 		'font-base-weight' => '400',
 		'font-medium-weight' => '600',
 		'font-bold-weight' => '800',
-		'font-size-h1' => '40', // 2.5rem
+		'font-size-h1' => '40', // 2.5remF
 		'font-size-h2' => '32', // 2rem
 		'font-size-h3' => '26', // 1.6rem
 		'font-size-h4' => '20', // 1.2rem
@@ -696,6 +696,7 @@ SHOPWARE_EOD;
 
         $tabPanel->addTab($this->createGeneralTab());
         $tabPanel->addTab($this->createTypographyTab());
+        $tabPanel->addTab($this->createIconsTab());
         $tabPanel->addTab($this->createButtonsTab());
         $tabPanel->addTab($this->createFormsTab());
         $tabPanel->addTab($this->createTablesTab());
@@ -915,6 +916,64 @@ SHOPWARE_EOD;
         return $tab;
     }
 	
+	/*
+	 * createIconsTab take place here
+	 */
+    private function createIconsTab()
+    {
+		
+		// Create the Tab
+		$tab = $this->createTab(
+			'icons_color_settings_tab',
+			'__icons_color_settings_tab__',
+			array(
+				'attributes' => array(
+					'layout' => 'anchor',
+					'flex' => 1,
+					'autoScroll' => true,
+				)
+			)
+		);
+		
+		$tab->addElement($this->IconsGeneralSettings());
+		
+		return $tab;
+	}
+	
+	public function IconsGeneralSettings()
+	{
+	
+		$fieldset = $this->createFieldSet(
+		   'icons_general_color_settings',
+		   '__icons_general_color_settings__',
+		   array(
+			  'attributes' => array(
+				 'layout' => 'column',
+				 'flex' => 0,
+				 'autoScroll' => true,
+				 'defaults' => array(
+					'columnWidth' => 0.5,
+					'labelWidth' => 150,
+					'margin' => '5 15 5 0'
+				 )
+			  )
+		   )
+		);
+
+		$fieldset->addElement(
+			$this->createSelectField(
+			   'icomoon-font-family',
+			   '__icomoon-font-family__',
+			   'foundation-icons',
+			   [
+				  ['value' => 'foundation-icons', 'text' => '__foundation_icons__'],
+				  ['value' => 'foundation-icons-feather', 'text' => '__foundation_icons_feather__']
+			   ]
+			)
+		);
+	
+		return $fieldset;
+	}
 	
     private function createTypographyTab()
     {
