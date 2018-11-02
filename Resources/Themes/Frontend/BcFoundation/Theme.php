@@ -208,6 +208,8 @@ SHOPWARE_EOD;
 		'tabletLogo' => 'frontend/_public/src/img/logos/logo--tablet.png',
 		'tabletLandscapeLogo' => 'frontend/_public/src/img/logos/logo--tablet.png',
 		'desktopLogo' => 'frontend/_public/src/img/logos/logo--tablet.png',
+		// Icons
+		'icomoon-font-family' => 'foundation-icons',
 		// Scroll to Top
 		'scroll-to-top-size' => '45',
 		'scroll-to-top-icon-size' => '14',
@@ -964,7 +966,7 @@ SHOPWARE_EOD;
 			$this->createSelectField(
 			   'icomoon-font-family',
 			   '__icomoon-font-family__',
-			   'foundation-icons',
+			   $this->themeColorDefaults['icomoon-font-family'],
 			   [
 				  ['value' => 'foundation-icons', 'text' => '__foundation_icons__'],
 				  ['value' => 'foundation-icons-feather', 'text' => '__foundation_icons_feather__']
