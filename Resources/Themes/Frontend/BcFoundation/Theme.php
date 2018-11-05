@@ -145,7 +145,9 @@ SHOPWARE_EOD;
         'badge-recommendation-bg' => '@brand-dark',
         'badge-recommendation-color' => '#FFFFFF',
         'badge-download-bg' => '@brand-info',
-        'badge-download-color' => '#FFFFFF',		
+        'badge-download-color' => '#FFFFFF',
+		// Layout General Colors
+		'sidebar-bg-color' => 'transparent',
 		// Offcanvas Colors
 		'offcanvas-bg-color' => '#ffffff',
 		'offcanvas-navigation-headline-bg-color' => '@gray-light',		
@@ -170,6 +172,7 @@ SHOPWARE_EOD;
 		'tab-link-hover-text-color' => '@link-color',
 		'tab-link-active-border-color' => '@brand-dark',
 		'tab-link-hover-border-color' => '@brand-primary',
+		'tab-menu-bg-color' => 'transparent',
 		// Dropdown Menu
 		'dropdown-menu-bg-color' => '#ffffff',
 		'dropdown-link-hover-bg-color' => '@gray-light',
@@ -1833,12 +1836,44 @@ SHOPWARE_EOD;
 			)
 		);
 
+        $tab->addElement($this->LayoutGeneralColorSettings());
         $tab->addElement($this->OffcanvasColorSettings());
         $tab->addElement($this->BreadcrumbColorSettings());
         $tab->addElement($this->ProductImageColorSettings());
         $tab->addElement($this->SlidersColorSettings());
 
 		return $tab;
+	}
+	
+    public function LayoutGeneralColorSettings()
+    {
+
+        $fieldset = $this->createFieldSet(
+            'layout_general_color_settings',
+            '__layout_general_color_settings__',
+            array(
+                'attributes' => array(
+                    'layout' => 'column',
+                    'flex' => 0,
+                    'autoScroll' => true,
+                    'defaults' => array(
+                        'columnWidth' => 0.5,
+                        'labelWidth' => 150,
+                        'margin' => '5 15 5 0'
+                    )
+                )
+            )
+        );
+		
+        $fieldset->addElement(
+            $this->createColorPickerField(
+                'sidebar-bg-color',
+                '__sidebar-bg-color__',
+                $this->themeColorDefaults['sidebar-bg-color']
+            )
+        );
+		
+		return $fieldset;	
 	}
 
     public function OffcanvasColorSettings()
@@ -2196,6 +2231,14 @@ SHOPWARE_EOD;
                 'tab-link-hover-border-color',
                 '__tab-link-hover-border-color__',
                 $this->themeColorDefaults['tab-link-hover-border-color']
+            )
+        );
+
+        $fieldset->addElement(
+            $this->createColorPickerField(
+                'tab-menu-bg-color',
+                '__tab-menu-bg-color__',
+                $this->themeColorDefaults['tab-menu-bg-color']
             )
         );
 
