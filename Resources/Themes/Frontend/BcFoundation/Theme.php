@@ -969,7 +969,7 @@ SHOPWARE_EOD;
 			$this->createSelectField(
 			   'icomoon-font-family',
 			   '__icomoon-font-family__',
-			   $this->themeColorDefaults['icomoon-font-family'],
+			   $this->themeConfigDefaults['icomoon-font-family'],
 			   [
 				  ['value' => 'foundation-icons', 'text' => '__foundation_icons__'],
 				  ['value' => 'foundation-icons-feather', 'text' => '__foundation_icons_feather__']
