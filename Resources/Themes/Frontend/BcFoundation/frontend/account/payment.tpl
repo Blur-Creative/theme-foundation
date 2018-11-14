@@ -1,5 +1,12 @@
 {extends file='parent:frontend/account/payment.tpl'}
 
+{* Payment headline *}
+{block name="frontend_account_payment_headline"}
+	<div class="panel account--welcome">
+		<h1 class="panel--title">{s name="PaymentHeadline"}{/s}</h1>
+	</div>
+{/block}
+
 {* Payment actions *}
 {block name="frontend_account_payment_action_buttons"}
     <div class="account--actions panel--footer">

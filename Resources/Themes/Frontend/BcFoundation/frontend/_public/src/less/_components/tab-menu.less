@@ -23,6 +23,7 @@ The functionality is provided by the `jquery.tab-menu.js` file.
 */
 
 .js--tab-menu {
+	
     .tab--navigation {
         list-style: none;
     }
@@ -60,6 +61,21 @@ The functionality is provided by the `jquery.tab-menu.js` file.
             display: inline-block;
         }
     }
+	
+	.tab--container {
+		background-color: @tab-menu-bg-color;
+		.unitize(border-bottom-left-radius, @border-radius-base);
+		.unitize(border-bottom-right-radius, @border-radius-base);
+		border: solid @border-color;
+		.unitize(border-width, 1);
+		border-top: 0;
+		
+		.boxed-content-layout & {
+			.unitize(padding-left, 30);
+			.unitize(padding-right, 30);
+			box-shadow: 0 0 0.5rem fade( #000000, @boxed-content-shadow-opacity );
+		}
+	}
 
     // Different styling when tab navigation is scrollable
     &.js--menu-scroller {

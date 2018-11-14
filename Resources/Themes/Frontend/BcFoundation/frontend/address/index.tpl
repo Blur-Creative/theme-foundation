@@ -1,5 +1,12 @@
 {extends file='parent:frontend/address/index.tpl'}
 
+{* Addresses headline *}
+{block name="frontend_address_headline"}
+	<div class="panel account--welcome">
+		<h1 class="panel--title">{s name="AddressesTitle"}My addresses{/s}</h1>
+	</div>
+{/block}
+
 {block name="frontend_address_item_content"}
     <div class="address--item-content address--box">
         <div class="panel has--border is--rounded block">

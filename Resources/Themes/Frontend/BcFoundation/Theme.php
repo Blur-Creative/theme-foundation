@@ -150,7 +150,7 @@ SHOPWARE_EOD;
 		'sidebar-bg-color' => 'transparent',
 		// Offcanvas Colors
 		'offcanvas-bg-color' => '#ffffff',
-		'offcanvas-navigation-headline-bg-color' => '@gray-light',		
+		'offcanvas-navigation-headline-bg-color' => '@gray-light',
 		// Breadcrumb color settings
 		'breadcrumb-bg-color' => '#f6f6f6',
 		'breadcrumb-text-color' => '@brand-dark',
@@ -159,7 +159,7 @@ SHOPWARE_EOD;
 		'image-background-color' => '#ffffff',
 		'manufacturer-background-color' => '#ffffff',
 		// Sliders Color Settings
-		'slider-arrow-bg-color' => '@gray-light',		
+		'slider-arrow-bg-color' => '@gray-light',
 		'slider-arrow-icon-color' => '@btn-default-text-color',
 		// Forms
 		'select-field-arrow-color' => '@gray-dark',
@@ -213,6 +213,8 @@ SHOPWARE_EOD;
 		'desktopLogo' => 'frontend/_public/src/img/logos/logo--tablet.png',
 		// Icons
 		'icomoon-font-family' => 'foundation-icons',
+		// Google Fonts
+		'google_fonts_tag' => '',
 		// Scroll to Top
 		'scroll-to-top-size' => '45',
 		'scroll-to-top-icon-size' => '14',
@@ -268,13 +270,13 @@ SHOPWARE_EOD;
 	 * Discard Less files from Responsive Theme
 	 */
 	protected $discardedLessThemes = [\Shopware\Themes\Responsive\Theme::class];
-	
+
 	/**
 	 * Discard Theme Config from Bare and Responsive Theme
 	 */
 	protected $inheritanceConfig = false;
-	
-	
+
+
     /**
      * Helper function to get the attribute of a checkbox field which shows a description label
      *
@@ -289,7 +291,7 @@ SHOPWARE_EOD;
 
         return ['attributes' => [$labelType => $description]];
     }
-	
+
     /**
      * Holds default fieldSet configuration.
      *
@@ -323,7 +325,7 @@ SHOPWARE_EOD;
                 ],
             ]
         );
-		
+
         $tab_color_settings = $this->createTab(
             'responsive_tab',
             '__responsive_colors__'
@@ -348,9 +350,9 @@ SHOPWARE_EOD;
 
 		$tab_logo_favicons->addElement($this->createLogoSettings());
 		$tab_logo_favicons->addElement($this->createFaviconSettings());
-		
+
 		$tab_color_settings->addElement($this->createBottomTabPanel());
-		
+
 		$tab_advanced_color_settings->addElement($this->createAdvancedColorSettings());
 	}
 
@@ -404,7 +406,7 @@ SHOPWARE_EOD;
                 ['attributes' => ['lessCompatible' => false]]
             )
         );
-		
+
 		return $fieldset;
 	}
 
@@ -460,11 +462,11 @@ SHOPWARE_EOD;
                 ['attributes' => ['lessCompatible' => false]]
             )
         );
-		
+
 		return $fieldSet;
 	}
-	
-	
+
+
     /**
      * Helper function to create the main tab ("Responsive configuration").
      *
@@ -687,7 +689,7 @@ SHOPWARE_EOD;
 
         return $tab;
     }
-	
+
 	private function createBottomTabPanel()
     {
         $tabPanel = $this->createTabPanel(
@@ -708,7 +710,7 @@ SHOPWARE_EOD;
 
         return $tabPanel;
     }
-	
+
     private function createGeneralTab()
     {
         $tab = $this->createTab(
@@ -756,9 +758,9 @@ SHOPWARE_EOD;
                 $this->themeColorDefaults['brand-secondary-dark']
             )
         );
-		
+
         $tab->addElement($fieldSetBasic);
-		
+
         $attributes = array_merge($this->fieldSetDefaults, ['height' => 130]);
         $fieldSetGrey = $this->createFieldSet(
             'grey_tones',
@@ -794,7 +796,7 @@ SHOPWARE_EOD;
                 $this->themeColorDefaults['border-color']
             )
         );
-		
+
         $tab->addElement($fieldSetGrey);
 
         $attributes = array_merge($this->fieldSetDefaults, ['height' => 130]);
@@ -920,13 +922,13 @@ SHOPWARE_EOD;
 
         return $tab;
     }
-	
+
 	/*
 	 * createIconsTab take place here
 	 */
     private function createIconsTab()
     {
-		
+
 		// Create the Tab
 		$tab = $this->createTab(
 			'icons_color_settings_tab',
@@ -939,15 +941,15 @@ SHOPWARE_EOD;
 				)
 			)
 		);
-		
+
 		$tab->addElement($this->IconsGeneralSettings());
-		
+
 		return $tab;
 	}
-	
+
 	public function IconsGeneralSettings()
 	{
-	
+
 		$fieldset = $this->createFieldSet(
 		   'icons_general_color_settings',
 		   '__icons_general_color_settings__',
@@ -976,10 +978,10 @@ SHOPWARE_EOD;
 			   ]
 			)
 		);
-	
+
 		return $fieldset;
 	}
-	
+
     private function createTypographyTab()
     {
         $tab = $this->createTab(
@@ -1019,7 +1021,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'google_fonts_tag',
                 '__google_fonts_tag__',
-                '',
+                $this->themeColorDefaults['google_fonts_tag'],
                 ['attributes' =>
                     [
                         'lessCompatible' => false,
@@ -1114,8 +1116,8 @@ SHOPWARE_EOD;
 
         return $tab;
     }
-	
-	
+
+
     /**
      * Helper function to create the tab ("Buttons & Panels").
      *
@@ -1354,8 +1356,8 @@ SHOPWARE_EOD;
         return $tab;
     }
 
-	
-	
+
+
     /**
      * Helper function to create the tab ("Forms").
      *
@@ -1517,8 +1519,8 @@ SHOPWARE_EOD;
 
         return $tab;
     }
-	
-	
+
+
     /**
      * Helper function to create the tab ("Tables & Badges").
      *
@@ -1664,8 +1666,8 @@ SHOPWARE_EOD;
         return $tab;
     }
 
-	
-	
+
+
 	public function createAdvancedColorSettings()
 	{
         $tabPanel = $this->createTabPanel(
@@ -1685,8 +1687,8 @@ SHOPWARE_EOD;
 
 		return $tabPanel;
 	}
-	
-	
+
+
 
     public function GeneralColorSettingsTab()
     {
@@ -1844,7 +1846,7 @@ SHOPWARE_EOD;
 
 		return $tab;
 	}
-	
+
     public function LayoutGeneralColorSettings()
     {
 
@@ -1864,7 +1866,7 @@ SHOPWARE_EOD;
                 )
             )
         );
-		
+
         $fieldset->addElement(
             $this->createColorPickerField(
                 'sidebar-bg-color',
@@ -1872,8 +1874,8 @@ SHOPWARE_EOD;
                 $this->themeColorDefaults['sidebar-bg-color']
             )
         );
-		
-		return $fieldset;	
+
+		return $fieldset;
 	}
 
     public function OffcanvasColorSettings()
