@@ -66,14 +66,14 @@ The functionality is provided by the `jquery.tab-menu.js` file.
 		background-color: @tab-menu-bg-color;
 		.unitize(border-bottom-left-radius, @border-radius-base);
 		.unitize(border-bottom-right-radius, @border-radius-base);
-		border: solid @border-color;
-		.unitize(border-width, 1);
-		border-top: 0;
+		border: 0 solid @border-color;
 		
 		.boxed-content-layout & {
 			.unitize(padding-left, 30);
 			.unitize(padding-right, 30);
 			box-shadow: 0 0 0.5rem fade( #000000, @boxed-content-shadow-opacity );
+			.unitize(border-width, 1);
+			border-top: 0;
 		}
 	}
 
