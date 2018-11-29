@@ -8,7 +8,7 @@
         {foreach $categories as $category}
 			{block name="frontend_index_categories_left_entry"}
 				<li class="navigation--entry{if $category.flag} is--active{/if}{if $category.subcategories} has--sub-categories{/if}{if $category.childrenCount} has--sub-children{/if}" role="menuitem">
-					<div class="navigation--item{if $category.flag} is--active{/if}{if $category.subcategories} has--sub-categories{/if}">
+					<div class="navigation--item{if $category.flag} is--active{if $category.id === $sCategoryContent.id} is--lastchild-active{/if}{/if}{if $category.subcategories} has--sub-categories{/if}">
 						<a class="btn is--link navigation--link"
 							href="{$category.link}"
 							title="{$category.description|escape}"
@@ -33,6 +33,7 @@
         {/foreach}
         {block name="frontend_index_categories_left_after"}{/block}
     </ul>
+    {debug}
 {/function}
 
 {if $sCategories}
