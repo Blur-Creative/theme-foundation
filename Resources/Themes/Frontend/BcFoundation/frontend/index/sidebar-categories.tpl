@@ -33,7 +33,6 @@
         {/foreach}
         {block name="frontend_index_categories_left_after"}{/block}
     </ul>
-    {debug}
 {/function}
 
 {if $sCategories}

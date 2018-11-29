@@ -53,8 +53,11 @@ SHOPWARE_EOD;
 		'gray' => '#cccccc',
 		'gray-light' => 'screen(@gray, @shade-400)',
 		'gray-dark' => 'multiply(@gray, @shade-400)',
-		// border colors
+		// borders
 		'border-color' => 'rgba(0, 0, 0, 0.15)',
+		'border-radius-sm' => '2',
+		'border-radius-base' => '3',
+		'border-radius-lg' => '4',
 		// highlight colors
 		'highlight-success' => '#28a745',
 		'highlight-error' => '#dc3545',
@@ -915,6 +918,30 @@ SHOPWARE_EOD;
                 'overlay-opacity',
                 '@overlay-opacity',
                 $this->themeColorDefaults['overlay-opacity']
+            )
+        );
+		
+        $fieldSetScaffolding->addElement(
+            $this->createTextField(
+                'border-radius-sm',
+                '@border-radius-sm',
+                $this->themeColorDefaults['border-radius-sm']
+            )
+        );
+		
+        $fieldSetScaffolding->addElement(
+            $this->createTextField(
+                'border-radius-base',
+                '@border-radius-base',
+                $this->themeColorDefaults['border-radius-base']
+            )
+        );
+		
+        $fieldSetScaffolding->addElement(
+            $this->createTextField(
+                'border-radius-lg',
+                '@border-radius-lg',
+                $this->themeColorDefaults['border-radius-lg']
             )
         );
 
