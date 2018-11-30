@@ -3,7 +3,7 @@
         xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
 	<label lang="en">Foundation Theme</label>
     <label lang="de">Foundation Theme</label>
-    <version>1.0.9</version>
+    <version>1.0.6</version>
 
     <link>https://blurcreative.de</link>
     <author>BlurCreative</author>

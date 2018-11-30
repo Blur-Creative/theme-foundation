@@ -840,7 +840,7 @@ SHOPWARE_EOD;
 
         $tab->addElement($fieldSetHighlights);
 
-        $attributes = array_merge($this->fieldSetDefaults, ['height' => 220]);
+        $attributes = array_merge($this->fieldSetDefaults, ['height' => 300]);
         $fieldSetScaffolding = $this->createFieldSet(
             'scaffolding',
             '__responsive_tab_general_fieldset_scaffolding__',
