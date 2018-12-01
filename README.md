@@ -1,25 +1,21 @@
 ![Foundation](https://res.blurcreative.de/themes/foundation/logos/logo-screen-md.png)
 
-## Shopware 5 Theme Foundation 
+## Shopware 5 Theme Foundation
 
 Is an alternative to Shopware's Responsive Theme to develope your own Theme or Plugin Template.
 It **isn't a wohle Theme**. It's **more of a solid Theme Base**.
 It uses the same style classes so you can follow the Responsive Theme Style Guide.
 
-### What are the advantages? Just take a look:
-- Rejects the Responsive Theme CSS and build a far better LESS Coding Base
-- Super lightweight and clean LESS Code (half of the Responsive Theme outputted  CSS Size)
-- Useful Bootstrap 4 Components are added (You can add the whole BS4 Framework but beware of conflicts with the Responsive Theme Style Guide)
-- Some disadvantageous coded JS Plugins were fixed
-    - Dropdown Menu
-- more to come
+## What's next?
 
-### Requirements
-- Minimum Shopware 5.4.x
-- Bare and Responsive Theme
+In this Branch we Merge the Bare and the Responsive Theme into the Foundation Theme.  
+So there are no requirements anymore to use the Foundation Theme.  
 
-### Conclusion
+**Why we are doing this?**  
+First of all that improves the Performance in the Backend and the compilation Time because there is no dependence of Bare / Responsive anymore.
+Second we can improve some jQuery Codes directly so we don't need to override them.  
+This should lower the overall Javascript filesize.  
 
-Still in development (pre alpha) but it's growing fast.
-Follow the Repo the get the latest Updates.
+The Goal is to develope a super lightweight Base Theme which you can use to build your own awesome Theme without disadvantages.  
 
+The Development starts with Shopware 5.5.3 and we will Update all original components of the Bare and Responsive Theme constantly.
