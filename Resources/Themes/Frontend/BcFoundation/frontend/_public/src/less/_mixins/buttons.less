@@ -14,7 +14,7 @@
 .btn--size-base {
 	line-height: @line-height-base;
 	.unitize-padding(10, 15);
-	.unitize(border-radius, @border-radius-base);
+	.unitize(border-radius, @btn-border-radius-base);
 	.unitize(font-size, @btn-font-size);
 	height: auto;
 }
@@ -23,6 +23,7 @@
 	line-height: @line-height-sm;
 	.unitize-padding(6, 10);
 	.unitize(font-size, (@btn-font-size * 0.9));
+	.unitize(border-radius, @btn-border-radius-sm);
 	height: auto;
 }
 
@@ -30,7 +31,7 @@
 	line-height: @line-height-lg;
 	.unitize-padding(14, 25);
 	.unitize(font-size, (@btn-font-size * 1.5));
-	.unitize(border-radius, @border-radius-lg);
+	.unitize(border-radius, @btn-border-radius-lg);
 	height: auto;
 }
 

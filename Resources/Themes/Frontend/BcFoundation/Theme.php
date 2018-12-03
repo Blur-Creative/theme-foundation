@@ -95,6 +95,9 @@ SHOPWARE_EOD;
 		'btn-default-border-color' => '@border-color',
 		'btn-default-hover-text-color' => '@btn-default-text-color',
 		'btn-default-hover-border-color' => '@btn-default-border-color',
+		'btn-border-radius-base' => '@border-radius-base',
+		'btn-border-radius-sm' => '@border-radius-sm',
+		'btn-border-radius-lg' => '@border-radius-lg',
 		'btn-primary-top-bg' => '@btn-default-top-bg',
 		'btn-primary-bottom-bg' => '@btn-default-bottom-bg',
         'btn-primary-hover-bg' => '@brand-primary-light',
@@ -126,6 +129,9 @@ SHOPWARE_EOD;
 		'input-focus-bg' => '#FFFFFF',
 		'input-placeholder-color' => '@gray-dark',
 		'input-border' => '@border-color',
+		'input-border-radius-base' => '@border-radius-base',
+		'input-border-radius-sm' => '@border-radius-sm',
+		'input-border-radius-lg' => '@border-radius-lg',
 		'input-error-bg' => 'desaturate(lighten(@highlight-error, 38%), 20%)',
 		'input-error-border' => '@highlight-error',
 		'input-error-color' => '@highlight-error',
@@ -1186,7 +1192,7 @@ SHOPWARE_EOD;
 
         $tab->addElement($fieldSetButtons);
 
-        $attributes = array_merge($this->fieldSetDefaults, ['height' => 200]);
+        $attributes = array_merge($this->fieldSetDefaults, ['height' => 250]);
         $fieldSetDefaultButtons = $this->createFieldSet(
             'buttons_default_fieldset',
             '__responsive_tab_buttons_fieldset_default__',
@@ -1240,6 +1246,27 @@ SHOPWARE_EOD;
                 'btn-default-hover-border-color',
                 '@btn-default-hover-border-color',
                 $this->themeColorDefaults['btn-default-hover-border-color']
+            )
+        );
+        $fieldSetDefaultButtons->addElement(
+            $this->createTextField(
+                'btn-border-radius-base',
+                '@btn-border-radius-base',
+                $this->themeColorDefaults['btn-border-radius-base']
+            )
+        );
+        $fieldSetDefaultButtons->addElement(
+            $this->createTextField(
+                'btn-border-radius-sm',
+                '@btn-border-radius-sm',
+                $this->themeColorDefaults['btn-border-radius-sm']
+            )
+        );
+        $fieldSetDefaultButtons->addElement(
+            $this->createTextField(
+                'btn-border-radius-lg',
+                '@btn-border-radius-lg',
+                $this->themeColorDefaults['btn-border-radius-lg']
             )
         );
 
@@ -1426,7 +1453,7 @@ SHOPWARE_EOD;
 
         $tab->addElement($fieldSetLabels);
 
-        $attributes = array_merge($this->fieldSetDefaults, ['height' => 160]);
+        $attributes = array_merge($this->fieldSetDefaults, ['height' => 200]);
         $fieldSetFormBase = $this->createFieldSet(
             'form_base_fieldset',
             '__responsive_tab_forms_fieldset_global__',
@@ -1466,6 +1493,27 @@ SHOPWARE_EOD;
                 'input-border',
                 '@input-border',
                 $this->themeColorDefaults['input-border']
+            )
+        );
+        $fieldSetFormBase->addElement(
+            $this->createTextField(
+                'input-border-radius-base',
+                '@input-border-radius-base',
+                $this->themeColorDefaults['input-border-radius-base']
+            )
+        );
+        $fieldSetFormBase->addElement(
+            $this->createTextField(
+                'input-border-radius-sm',
+                '@input-border-radius-sm',
+                $this->themeColorDefaults['input-border-radius-sm']
+            )
+        );
+        $fieldSetFormBase->addElement(
+            $this->createTextField(
+                'input-border-radius-lg',
+                '@input-border-radius-lg',
+                $this->themeColorDefaults['input-border-radius-lg']
             )
         );
 

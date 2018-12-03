@@ -37,6 +37,7 @@
 	.form-placeholder;
 	.unitize-padding(10, 15);
 	.unitize(font-size, @input-font-size);
+	.unitize(border-radius, @input-border-radius-base);
 	background-color: @input-bg;
 	line-height: @line-height-base;
 	box-shadow: none;
@@ -72,7 +73,14 @@
 	&.is--small {
 		line-height: @line-height-sm;
 		.unitize(font-size, (@input-font-size * 0.8));
+		.unitize(border-radius, @input-border-radius-sm);
 		.unitize-padding(8, 15);
+	}
+	&.is--large {
+		line-height: @line-height-lg;
+		.unitize(font-size, (@input-font-size * 1.2));
+		.unitize(border-radius, @input-border-radius-lg);
+		.unitize-padding(12, 20);
 	}
 	
 	&.has--error {
